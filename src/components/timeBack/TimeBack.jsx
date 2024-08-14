@@ -2,6 +2,7 @@ import Image from "next/image";
 import React from "react";
 import Lamp from "@/assets/image/lamp/lamp.png";
 import centerFlores from "@/assets/image/flores/center.jpg";
+import { alice, euphorig, readex_pro } from "@/utils/fonts";
 
 const TimeBack = () => {
   return (
@@ -12,68 +13,37 @@ const TimeBack = () => {
           <div className="w-32 mx-auto">
             <Image src={Lamp} alt="lamp" />
           </div>
-          <p className="text-center italic">
+          <p className={`${alice.className} text-center italic`}>
             Assalamu&apos;alaikumu Warahmatullahi Wabarakatuh
           </p>
-          <p className="text-center text-sm">
+          <p className={`${alice.className} text-center text-sm`}>
             Dengan memohon rahmat dan ridho Allah SWT, Kami Mengundang
             Bapak/Ibu/Saudara/i, untuk menghindari acara pernikahan kami
           </p>
           <div className="flex justify-around">
             <div className="flex flex-col justify-center items-center">
-              <p className="text-7xl">00</p>
-              <p className="text-xl">Hari</p>
+              <p className={`${euphorig.className} text-7xl`}>00</p>
+              <p className={`${readex_pro.className} text-xl`}>Hari</p>
             </div>
 
             <div className="flex flex-col justify-center items-center">
-              <p className="text-7xl">00</p>
-              <p className="text-xl">Jam</p>
+              <p className={`${euphorig.className} text-7xl`}>00</p>
+              <p className={`${readex_pro.className} text-xl`}>Jam</p>
             </div>
 
             <div className="flex flex-col justify-center items-center">
-              <p className="text-7xl">00</p>
-              <p className="text-xl">Menit</p>
+              <p className={`${euphorig.className} text-7xl`}>00</p>
+              <p className={`${readex_pro.className} text-xl`}>Menit</p>
             </div>
 
             <div className="flex flex-col justify-center items-center">
-              <p className="text-7xl">00</p>
-              <p className="text-xl">Detik</p>
+              <p className={`${euphorig.className} text-7xl`}>00</p>
+              <p className={`${readex_pro.className} text-xl`}>Detik</p>
             </div>
           </div>
         </div>
       </div>
-      {/* <p>asu</p> */}
     </div>
-    // <div
-    //   className={`${quicksand.className} min-h-[65vh] bg-[rgba(129,62,62)] flex flex-col justify-around text-white`}
-    // >
-    //   <Image src={Lamp} alt="lamp" className="w-32 block mx-auto" />
-    //   <p className="text-center italic">
-    //     Assalamu&apos;alaikumu Warahmatullahi Wabarakatuh
-    //   </p>
-    //   <p className="text-center text-sm">
-    //     Dengan memohon rahmat dan ridho Allah SWT, Kami Mengundang
-    //     Bapak/Ibu/Saudara/i, untuk menghindari acara pernikahan kami
-    //   </p>
-    //   <div className="flex justify-around">
-    //     <div className="flex flex-col justify-center items-center">
-    //       <p className="text-7xl">00</p>
-    //       <p className="text-xl">Hari</p>
-    //     </div>
-    //     <div className="flex flex-col justify-center items-center">
-    //       <p className="text-7xl">00</p>
-    //       <p className="text-xl">Jam</p>
-    //     </div>
-    //     <div className="flex flex-col justify-center items-center">
-    //       <p className="text-7xl">00</p>
-    //       <p className="text-xl">Menit</p>
-    //     </div>
-    //     <div className="flex flex-col justify-center items-center">
-    //       <p className="text-7xl">00</p>
-    //       <p className="text-xl">Detik</p>
-    //     </div>
-    //   </div>
-    // </div>
   );
 };
 
