@@ -2,7 +2,6 @@ import Image from "next/image";
 import React from "react";
 import Lamp from "@/assets/image/lamp/lamp.png";
 import centerFlores from "@/assets/image/flores/center.jpg";
-import { quicksand } from "@/assets/fonts";
 
 const TimeBack = () => {
   return (

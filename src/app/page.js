@@ -1,5 +1,7 @@
 import Banner1 from "@/components/banner1/Banner1";
 import Banner2 from "@/components/banner2/Banner2";
+import BrideLeft from "@/components/bride/BrideLeft";
+import BrideRight from "@/components/bride/BrideRight";
 import TimeBack from "@/components/timeBack/TimeBack";
 
 export default function Home() {
@@ -8,6 +10,8 @@ export default function Home() {
       <Banner1 />
       <Banner2 />
       <TimeBack />
+      <BrideRight />
+      <BrideLeft />
     </div>
   );
 }
