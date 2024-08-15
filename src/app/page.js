@@ -3,6 +3,7 @@ import Banner2 from "@/components/banner2/Banner2";
 import BrideLeft from "@/components/bride/BrideLeft";
 import BrideRight from "@/components/bride/BrideRight";
 import TimeBack from "@/components/timeBack/TimeBack";
+import { TimeLine } from "@/components/timeline/TimeLine";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <TimeBack />
       <BrideRight />
       <BrideLeft />
+      <TimeLine />
     </div>
   );
 }

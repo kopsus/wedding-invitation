@@ -1,24 +1,35 @@
+"use client";
+
 import Image from "next/image";
 import imgBanner1 from "@/assets/image/banner/banner1.jpg";
-import { southernaire, quicksand, tms } from "@/utils/fonts";
+import { southernaire, quicksand, tms, poppinsMedium } from "@/utils/fonts";
+import { RiMailOpenFill } from "react-icons/ri";
+import { namaMempelai } from "@/utils";
 
 const Banner1 = () => {
   return (
-    <div className="max-h-screen overflow-hidden flex justify-center items-center relative">
-      <Image src={imgBanner1} alt="" className="block object-top" />
-      <div className="absolute top-0 left-0 w-full h-screen flex flex-col justify-end gap-20 pb-5">
-        <div className="flex flex-col gap-10 items-center">
-          <p className={`${southernaire.className} text-primary text-5xl`}>
-            Nia & Iyan
-          </p>
+    <div className="bg-red-400 min-h-screen overflow-hidden flex justify-center items-center relative">
+      <div className="overflow-hidden h-screen w-full">
+        <Image src={imgBanner1} alt="" />
+      </div>
+      <div className="absolute bottom-5 flex flex-col gap-5 items-center">
+        {namaMempelai.map((value, index) => (
           <p
-            className={`text-white text-lg font-medium ${quicksand.className}`}
+            key={index}
+            className={`${southernaire.className} text-primary text-5xl`}
           >
-            Kepada Yth :
+            {value.woman} & {value.man}
           </p>
-          <p className={`${tms.className} text-primary text-2xl font-bold`}>
-            Nama Tamu
-          </p>
+        ))}
+        <p className={`text-white text-lg font-medium ${quicksand.className}`}>
+          Kepada Yth :
+        </p>
+        <p className={`${tms.className} text-primary text-3xl font-bold`}>
+          Nama Tamu
+        </p>
+        <div className="bg-primary py-2 px-5 rounded-md text-white flex items-center gap-2 cursor-pointer">
+          <RiMailOpenFill />
+          <p className={`${poppinsMedium.className} text-sm`}>Bukan Undangan</p>
         </div>
         <p
           className={`capitalize text-center text-white text-sm ${quicksand.className}`}
