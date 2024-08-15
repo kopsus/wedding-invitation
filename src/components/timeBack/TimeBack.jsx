@@ -9,7 +9,7 @@ const TimeBack = () => {
     <div className="h-[65vh]">
       <div className="relative top-0 w-full h-full">
         <Image src={centerFlores} alt="" />
-        <div className="bg-primary w-full h-full absolute top-0 bg-opacity-80 text-white flex flex-col justify-around">
+        <div className="bg-primary w-full h-full absolute top-0 bg-opacity-80 text-white flex flex-col justify-around px-3">
           <div className="w-32 mx-auto">
             <Image src={Lamp} alt="lamp" />
           </div>
