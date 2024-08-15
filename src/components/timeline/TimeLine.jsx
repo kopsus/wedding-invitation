@@ -11,6 +11,7 @@ import {
   poppinsSemiBold,
   southernaire,
 } from "@/utils/fonts";
+import Link from "next/link";
 
 export const TimeLine = () => {
   const akadNikah = [
@@ -79,12 +80,16 @@ export const TimeLine = () => {
                   >
                     {value.maps}
                   </p>
-                  <div className="flex items-center gap-2 bg-primary py-2 px-5 mt-5 border-2 text-white rounded-md border-white hover:bg-white hover:text-black hover:border-black transition cursor-pointer">
+                  <Link
+                    href={`https://www.google.com/maps/place/${value.maps}`}
+                    target="_blank"
+                    className="flex items-center gap-2 bg-primary py-2 px-5 mt-5 border-2 text-white rounded-md border-white hover:bg-white hover:text-black hover:border-black transition cursor-pointer"
+                  >
                     <IoLocationSharp />
                     <p className={`${poppinsLight.className} text-base`}>
                       Liha Lokasi
                     </p>
-                  </div>
+                  </Link>
                 </div>
               </div>
             </div>
