@@ -21,7 +21,7 @@ const BrideRight = () => {
   return biodataMempelaiWanita.map((value, index) => (
     <div key={index} className="relative top-0 w-full h-full">
       <Image src={floreTopLeft} alt="" width={0} height={0} />
-      <div className="absolute top-0 w-full h-full">
+      <div className="absolute top-10 w-full h-full">
         <div className="px-7 pt-5 flex flex-col items-start">
           <p className={`${southernaire.className} text-primary text-6xl`}>
             {value.namaPanggilan}
