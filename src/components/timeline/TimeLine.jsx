@@ -54,33 +54,32 @@ export const TimeLine = () => {
                   <p
                     className={`${southernaire.className} text-5xl text-primary`}
                   >
-                    Akad Nikah
+                    {value.title}
                   </p>
                   <p
                     className={`${poppinsMedium.className} text-base font-medium`}
                   >
-                    Minggu,22 Agustus 2024
+                    {value.date}
                   </p>
                 </div>
                 <div className="flex flex-col mt-10 items-center">
                   <div className="flex items-center gap-2">
                     <FaClock size={24} />
                     <p className={`${poppinsMedium.className} text-base`}>
-                      09:00 WIB - 10:00 WIB
+                      {value.timeStart} WIB - {value.timeEnd} WIB
                     </p>
                   </div>
                   <p
                     className={`${poppinsSemiBold.className} text-lg text-primary mt-5 mb-1`}
                   >
-                    AULA MASJID AL-NIZAM
+                    {value.place}
                   </p>
                   <p
                     className={`${alice.className} text-lg text-center text-[rgb(90, 90, 90)]`}
                   >
-                    Jl.Rawasari Timur No.04, RT.16 / RW.02 Cempaka Putih Timur,
-                    Cempaka Putih
+                    {value.maps}
                   </p>
-                  <div className="flex items-center gap-2 bg-primary py-2 px-5 mt-5 border-2 text-white border-white hover:bg-white hover:text-black hover:border-black transition cursor-pointer">
+                  <div className="flex items-center gap-2 bg-primary py-2 px-5 mt-5 border-2 text-white rounded-md border-white hover:bg-white hover:text-black hover:border-black transition cursor-pointer">
                     <IoLocationSharp />
                     <p className={`${poppinsLight.className} text-base`}>
                       Liha Lokasi

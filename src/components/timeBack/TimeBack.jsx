@@ -7,11 +7,9 @@ import centerFlores from "@/assets/image/flores/center.jpg";
 import { alice, euphorig, readex_pro } from "@/utils/fonts";
 
 const TimeBack = () => {
-  // Define your event date here
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  const eventDate = new Date("2024-10-27T00:00:00"); // Change this to your event date
+  const eventDate = new Date("2024-10-27T00:00:00");
 
-  // State for countdown
   const [countdown, setCountdown] = useState({
     days: 0,
     hours: 0,
@@ -25,7 +23,6 @@ const TimeBack = () => {
       const timeDiff = eventDate - now;
 
       if (timeDiff <= 0) {
-        // Event date has passed
         setCountdown({ days: 0, hours: 0, minutes: 0, seconds: 0 });
         return;
       }
