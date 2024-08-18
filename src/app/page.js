@@ -9,6 +9,7 @@ import Rsvp from "@/components/rsvp/Rsvp";
 import Story from "@/components/story/Story";
 import TimeBack from "@/components/timeBack/TimeBack";
 import { TimeLine } from "@/components/timeline/TimeLine";
+import Youtube from "@/components/youtube/Youtube";
 
 export default function Home() {
   return (
@@ -24,6 +25,7 @@ export default function Home() {
       <PlatformOnline />
       <Rsvp />
       <Gift />
+      <Youtube />
     </div>
   );
 }

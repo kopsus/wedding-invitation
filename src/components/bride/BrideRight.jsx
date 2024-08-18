@@ -5,6 +5,7 @@ import rightBride from "@/assets/image/personal/rightBride.png";
 import { southernaire, nightStillComes, alice } from "@/utils/fonts";
 import Link from "next/link";
 import kupuSmall from "@/assets/image/butterfly/kupu_small.gif";
+import imageDan from "@/assets/image/image_&.png";
 
 const BrideRight = () => {
   const biodataMempelaiWanita = [
@@ -18,45 +19,52 @@ const BrideRight = () => {
     },
   ];
 
-  return biodataMempelaiWanita.map((value, index) => (
-    <div key={index} className="relative top-0 w-full h-full">
-      <Image src={floreTopLeft} alt="" width={0} height={0} />
-      <div className="absolute top-10 w-full h-full">
-        <div className="px-7 pt-5 flex flex-col items-start">
-          <p
-            className={`${southernaire.className} text-primary text-6xl font-medium`}
-          >
-            {value.namaPanggilan}
-          </p>
-          <div className="mt-3 mb-5 flex flex-col">
-            <p
-              className={`text-[35px] font-medium text-(rgba(41,41,41)) ${nightStillComes.className}`}
-            >
-              {value.namaLengakp}
-            </p>
-            <p
-              className={`${alice.className} text-gray-500 text-[17px] font-medium w-[65%]`}
-            >
-              {value.namaOrtu}
-            </p>
+  return (
+    <>
+      {biodataMempelaiWanita.map((value, index) => (
+        <div key={index} className="relative top-0 w-full h-full">
+          <Image src={floreTopLeft} alt="" width={0} height={0} />
+          <div className="absolute top-10 w-full h-full">
+            <div className="px-7 pt-5 flex flex-col items-start">
+              <p
+                className={`${southernaire.className} text-primary text-6xl font-medium`}
+              >
+                {value.namaPanggilan}
+              </p>
+              <div className="mt-3 mb-5 flex flex-col">
+                <p
+                  className={`text-[35px] font-medium text-(rgba(41,41,41)) ${nightStillComes.className}`}
+                >
+                  {value.namaLengakp}
+                </p>
+                <p
+                  className={`${alice.className} text-gray-500 text-[17px] font-medium w-[65%]`}
+                >
+                  {value.namaOrtu}
+                </p>
+              </div>
+              <Link href={value.linkIg} target="_blank">
+                <FaInstagram
+                  color="white"
+                  size={28}
+                  className="bg-primary p-1 rounded-full cursor-pointer"
+                />
+              </Link>
+            </div>
+            <div className="w-full">
+              <Image src={value.potoProfile} alt="" width={0} height={0} />
+            </div>
+            <div className="overflow-hidden w-48 absolute bottom-64 left-20">
+              <Image src={kupuSmall} alt="" width={0} height={0} />
+            </div>
           </div>
-          <Link href={value.linkIg} target="_blank">
-            <FaInstagram
-              color="white"
-              size={28}
-              className="bg-primary p-1 rounded-full cursor-pointer"
-            />
-          </Link>
         </div>
-        <div className="w-full">
-          <Image src={value.potoProfile} alt="" width={0} height={0} />
-        </div>
-        <div className="overflow-hidden w-48 absolute bottom-64 left-20">
-          <Image src={kupuSmall} alt="" width={0} height={0} />
-        </div>
+      ))}
+      <div className="pt-32 bg-[#ecece9]">
+        <Image src={imageDan} alt="" width={0} height={0} />
       </div>
-    </div>
-  ));
+    </>
+  );
 };
 
 export default BrideRight;

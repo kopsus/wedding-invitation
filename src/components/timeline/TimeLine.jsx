@@ -4,7 +4,7 @@ import { FaClock } from "react-icons/fa";
 import { IoLocationSharp } from "react-icons/io5";
 import centerFlores from "@/assets/image/flores/center.jpg";
 import bgCard from "@/assets/image/flores/left_side.png";
-import merakPutih from "@/assets/image/Merak-Putih.png";
+import merakPutih from "@/assets/image/merak/Merak-Putih.png";
 import {
   alice,
   poppinsLight,
