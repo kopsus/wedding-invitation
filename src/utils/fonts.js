@@ -23,7 +23,7 @@ export const readex_pro = Readex_Pro({
 
 export const poppinsLight = Poppins({
   subsets: ["latin"],
-  weight: "300",
+  weight: "400",
 });
 
 export const poppinsMedium = Poppins({
@@ -55,4 +55,12 @@ export const nightStillComes = localFont({
 
 export const euphorig = localFont({
   src: "../assets/fonts/euphorigenic/Euphorigenic.otf",
+});
+
+export const georgia = localFont({
+  src: "../assets/fonts/georgia/georgia.ttf",
+});
+
+export const hathemBosteem = localFont({
+  src: "../assets/fonts/hathem_bosteem/Hathem Bosteem.ttf",
 });
