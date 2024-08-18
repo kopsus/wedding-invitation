@@ -42,7 +42,7 @@ const TimeBack = () => {
     updateCountdown();
 
     return () => clearInterval(intervalId);
-  }, [eventDate]);
+  }, []);
 
   return (
     <div className="h-[65vh]">
@@ -52,40 +52,45 @@ const TimeBack = () => {
           <div className="w-32 mx-auto">
             <Image src={Lamp} alt="lamp" />
           </div>
-          <p className={`${alice.className} text-center italic`}>
+          <p
+            className={`${alice.className} text-center text-[15px] font-medium`}
+            style={{ fontStyle: "italic" }}
+          >
             Assalamu&apos;alaikumu Warahmatullahi Wabarakatuh
           </p>
-          <p className={`${alice.className} text-center text-sm`}>
+          <p
+            className={`${alice.className} text-center text-[15px] font-medium`}
+          >
             Dengan memohon rahmat dan ridho Allah SWT, Kami Mengundang
             Bapak/Ibu/Saudara/i, untuk menghadiri acara pernikahan kami
           </p>
           <div className="flex justify-around">
             <div className="flex flex-col justify-center items-center">
-              <p className={`${euphorig.className} text-7xl`}>
+              <p className={`${euphorig.className} text-[69px] font-normal`}>
                 {countdown.days}
               </p>
-              <p className={`${readex_pro.className} text-xl`}>Hari</p>
+              <p className={`${readex_pro.className} text-[19px]`}>Hari</p>
             </div>
 
             <div className="flex flex-col justify-center items-center">
-              <p className={`${euphorig.className} text-7xl`}>
+              <p className={`${euphorig.className} text-[69px] font-normal`}>
                 {countdown.hours}
               </p>
-              <p className={`${readex_pro.className} text-xl`}>Jam</p>
+              <p className={`${readex_pro.className} text-[19px]`}>Jam</p>
             </div>
 
             <div className="flex flex-col justify-center items-center">
-              <p className={`${euphorig.className} text-7xl`}>
+              <p className={`${euphorig.className} text-[69px] font-normal`}>
                 {countdown.minutes}
               </p>
-              <p className={`${readex_pro.className} text-xl`}>Menit</p>
+              <p className={`${readex_pro.className} text-[19px]`}>Menit</p>
             </div>
 
             <div className="flex flex-col justify-center items-center">
-              <p className={`${euphorig.className} text-7xl`}>
+              <p className={`${euphorig.className} text-[69px] font-normal`}>
                 {countdown.seconds}
               </p>
-              <p className={`${readex_pro.className} text-xl`}>Detik</p>
+              <p className={`${readex_pro.className} text-[19px]`}>Detik</p>
             </div>
           </div>
         </div>

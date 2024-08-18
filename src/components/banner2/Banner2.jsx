@@ -12,14 +12,17 @@ const Banner2 = () => {
       <Image src={imgBanner2} alt="banner 2" className="" />
       <div className="absolute right-24 bottom-44 text-primary">
         {namaMempelai.map((value, index) => (
-          <p key={index} className={`${southernaire.className} text-5xl`}>
+          <p
+            key={index}
+            className={`${southernaire.className} text-[45px] font-medium`}
+          >
             {value.woman} & {value.man}
           </p>
         ))}
         {AcaraHajatan.map((value, index) => (
           <p
             key={index}
-            className={`${nightStillComes.className} text-xl font-medium`}
+            className={`${nightStillComes.className} text-[19px] font-medium`}
           >
             {value}
           </p>

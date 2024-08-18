@@ -4,6 +4,7 @@ import { FaClock } from "react-icons/fa";
 import { IoLocationSharp } from "react-icons/io5";
 import centerFlores from "@/assets/image/flores/center.jpg";
 import bgCard from "@/assets/image/flores/left_side.png";
+import merakPutih from "@/assets/image/Merak-Putih.png";
 import {
   alice,
   poppinsLight,
@@ -40,11 +41,14 @@ export const TimeLine = () => {
       <div className="absolute top-0 w-full h-full">
         <Image src={centerFlores} alt="" />
       </div>
-      <div className="bg-primary w-full h-full absolute top-0 bg-opacity-40 px-5 sm:px-10 pt-40">
+      <div className="bg-primary w-full h-full absolute top-0 bg-opacity-40 px-5 sm:px-10">
+        <div className="w-36 mx-auto my-10">
+          <Image src={merakPutih} alt="" width={0} height={0} />
+        </div>
         {akadNikah.map((value, index) => (
           <div
             key={index}
-            className="relative h-[450px] shadow-md shadow-black mb-20"
+            className="relative h-[450px] shadow-md shadow-black mb-16"
           >
             <div className="absolute top-0 w-full h-full opacity-60">
               <Image src={bgCard} alt="" />
@@ -53,12 +57,12 @@ export const TimeLine = () => {
               <div className="h-full py-10 px-10 sm:px-20">
                 <div className="text-center flex flex-col gap-3 border-b-2 border-primary pb-3">
                   <p
-                    className={`${southernaire.className} text-5xl text-primary`}
+                    className={`${southernaire.className} text-[47px] font-light text-primary`}
                   >
                     {value.title}
                   </p>
                   <p
-                    className={`${poppinsMedium.className} text-base font-medium`}
+                    className={`${poppinsMedium.className} text-[17px] font-medium`}
                   >
                     {value.date}
                   </p>
@@ -76,7 +80,7 @@ export const TimeLine = () => {
                     {value.place}
                   </p>
                   <p
-                    className={`${alice.className} text-lg text-center text-[rgb(90, 90, 90)]`}
+                    className={`${alice.className} text-base font-medium text-center text-[rgb(90, 90, 90)]`}
                   >
                     {value.maps}
                   </p>

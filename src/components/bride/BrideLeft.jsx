@@ -22,19 +22,21 @@ const BrideLeft = () => {
   return biodataMempelaiPria.map((value, index) => (
     <div key={index} className="relative w-full h-full">
       <Image src={bottom_right} alt="" width={0} height={0} />
-      <div className="absolute top-0 w-full h-full">
+      <div className="absolute top-10 w-full h-full">
         <div className="px-7 pt-5 flex flex-col items-end">
-          <p className={`${southernaire.className} text-primary text-6xl`}>
+          <p
+            className={`${southernaire.className} text-primary text-6xl font-medium`}
+          >
             {value.namaPanggilan}
           </p>
           <div className="mt-3 mb-5 flex flex-col items-end">
             <p
-              className={`text-3xl text-(rgba(41,41,41)) ${nightStillComes.className}`}
+              className={`text-[35px] font-medium text-(rgba(41,41,41)) ${nightStillComes.className}`}
             >
               {value.namaLengakp}
             </p>
             <p
-              className={`${alice.className} text-gray-500 text-lg text-end w-[65%]`}
+              className={`${alice.className} text-gray-500 text-[17px] text-end font-medium w-[65%]`}
             >
               {value.namaOrtu}
             </p>
@@ -42,7 +44,7 @@ const BrideLeft = () => {
           <Link href={value.linkIg} target="_blank">
             <FaInstagram
               color="white"
-              size={36}
+              size={28}
               className="bg-primary p-1 rounded-full cursor-pointer"
             />
           </Link>
@@ -50,7 +52,7 @@ const BrideLeft = () => {
         <div className="w-full">
           <Image src={value.potoProfile} alt="" width={0} height={0} />
         </div>
-        <div className="overflow-hidden w-48 absolute bottom-72 right-0">
+        <div className="overflow-hidden w-48 absolute bottom-64 left-20">
           <Image src={kupuSmall} alt="" width={0} height={0} />
         </div>
       </div>

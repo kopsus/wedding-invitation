@@ -16,15 +16,19 @@ const Banner1 = () => {
         {namaMempelai.map((value, index) => (
           <p
             key={index}
-            className={`${southernaire.className} text-primary text-5xl`}
+            className={`${southernaire.className} text-primary text-[41px] font-light`}
           >
             {value.woman} & {value.man}
           </p>
         ))}
-        <p className={`text-white text-lg font-medium ${quicksand.className}`}>
+        <p
+          className={`text-white text-[17px] font-medium ${quicksand.className}`}
+        >
           Kepada Yth :
         </p>
-        <p className={`${tms.className} text-primary text-3xl font-bold`}>
+        <p
+          className={`${tms.className} text-primary text-[26px] font-semibold`}
+        >
           Nama Tamu
         </p>
         <div className="bg-primary py-2 px-5 rounded-md text-white flex items-center gap-2 cursor-pointer">

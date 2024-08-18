@@ -23,23 +23,27 @@ const BrideRight = () => {
       <Image src={floreTopLeft} alt="" width={0} height={0} />
       <div className="absolute top-10 w-full h-full">
         <div className="px-7 pt-5 flex flex-col items-start">
-          <p className={`${southernaire.className} text-primary text-6xl`}>
+          <p
+            className={`${southernaire.className} text-primary text-6xl font-medium`}
+          >
             {value.namaPanggilan}
           </p>
           <div className="mt-3 mb-5 flex flex-col">
             <p
-              className={`text-3xl text-(rgba(41,41,41)) ${nightStillComes.className}`}
+              className={`text-[35px] font-medium text-(rgba(41,41,41)) ${nightStillComes.className}`}
             >
               {value.namaLengakp}
             </p>
-            <p className={`${alice.className} text-gray-500 text-lg w-[65%]`}>
+            <p
+              className={`${alice.className} text-gray-500 text-[17px] font-medium w-[65%]`}
+            >
               {value.namaOrtu}
             </p>
           </div>
           <Link href={value.linkIg} target="_blank">
             <FaInstagram
               color="white"
-              size={36}
+              size={28}
               className="bg-primary p-1 rounded-full cursor-pointer"
             />
           </Link>

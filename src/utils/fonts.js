@@ -1,5 +1,11 @@
 import localFont from "next/font/local";
-import { Alice, Quicksand, Readex_Pro, Poppins } from "next/font/google";
+import {
+  Alice,
+  Quicksand,
+  Readex_Pro,
+  Poppins,
+  Cormorant,
+} from "next/font/google";
 
 export const quicksand = Quicksand({
   weight: "500",
@@ -28,6 +34,11 @@ export const poppinsMedium = Poppins({
 export const poppinsSemiBold = Poppins({
   subsets: ["latin"],
   weight: "600",
+});
+
+export const cormorant = Cormorant({
+  subsets: ["latin"],
+  weight: "500",
 });
 
 export const southernaire = localFont({
