@@ -1,4 +1,5 @@
 import imageGallery3 from "@/assets/image/person/person3.jpg";
+import { CiClock2 } from "react-icons/ci";
 import { alice, georgia, hathemBosteem, poppinsLight } from "@/utils/fonts";
 
 const Rsvp = () => {
@@ -23,7 +24,7 @@ const Rsvp = () => {
 
   return (
     <div
-      className="bg-cover min-h-screen"
+      className="pb-10 min-h-screen bg-fixed bg-contain"
       style={{ backgroundImage: `url(${imageGallery3.src})` }}
     >
       <div className="flex flex-col gap-5 text-center pt-3 pb-10">
@@ -44,16 +45,16 @@ const Rsvp = () => {
       <div className="bg-[#eeeeeb] w-[90%] mx-auto rounded-lg ">
         <div className="pt-3 border-b border-slate-200">
           <p className="text-center text-primary font-medium">Comment</p>
-          <div className="grid grid-cols-3 mx-auto gap-5 w-[80%] text-primary">
-            <div className="text-center border border-primary p-2 rounded-md my-5">
+          <div className="grid grid-cols-3 mx-auto gap-5 w-[80%] text-[#b096a4]">
+            <div className="text-center border border-[#b096a4] p-2 rounded-md my-5">
               <p className="text-lg font-bold leading-7">2</p>
               <p className={`${poppinsLight.className} text-xs`}>Hadir</p>
             </div>
-            <div className="text-center border border-primary p-2 rounded-md my-5">
+            <div className="text-center border border-[#b096a4] p-2 rounded-md my-5">
               <p className="text-lg font-bold leading-7">2</p>
               <p className={`${poppinsLight.className} text-xs`}>Tidak Hadir</p>
             </div>
-            <div className="text-center border border-primary p-2 rounded-md my-5">
+            <div className="text-center border border-[#b096a4] p-2 rounded-md my-5">
               <p className="text-lg font-bold leading-7">2</p>
               <p className={`${poppinsLight.className} text-xs`}>Hadir</p>
             </div>
@@ -89,15 +90,25 @@ const Rsvp = () => {
             Kirim
           </button>
         </form>
-        {dataKehadiran.map((value, index) => (
-          <div key={index} className="px-10 py-5 border max-h-10">
-            <div className="flex items-center gap-2 mb-2">
-              <p className="">{value.name}</p>
-              <p>icon {value.hadir}</p>
+        <div
+          className="max-h-52 overflow-y-auto"
+          style={{ scrollbarWidth: "none" }}
+        >
+          {dataKehadiran.map((value, index) => (
+            <div key={index} className="px-10 py-5 border">
+              <div className="flex items-center gap-2 mb-2">
+                <p className="text-sm font-bold text-primary">{value.name}</p>
+                <p>icon {value.hadir}</p>
+              </div>
+              <p className="text-sm">{value.ucapan}</p>
+              <div className="flex items-center gap-1 text-[11px] text-primary mt-1">
+                <CiClock2 size={14} />
+                <p>Baru saja</p>
+                <p className="font-bold cursor-pointer">Replay</p>
+              </div>
             </div>
-            <p>{value.ucapan}</p>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );
