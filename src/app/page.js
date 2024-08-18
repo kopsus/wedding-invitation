@@ -2,6 +2,7 @@ import Banner1 from "@/components/banner1/Banner1";
 import Banner2 from "@/components/banner2/Banner2";
 import BrideLeft from "@/components/bride/BrideLeft";
 import BrideRight from "@/components/bride/BrideRight";
+import Footer from "@/components/footer/Footer";
 import Gallery from "@/components/gallery/Gallery";
 import Gift from "@/components/gift/Gift";
 import PlatformOnline from "@/components/platformOnline/PlatformOnline";
@@ -26,6 +27,7 @@ export default function Home() {
       <Rsvp />
       <Gift />
       <Youtube />
+      <Footer />
     </div>
   );
 }
