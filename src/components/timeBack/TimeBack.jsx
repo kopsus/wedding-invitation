@@ -2,13 +2,13 @@
 
 import Image from "next/image";
 import React, { useState, useEffect } from "react";
-import Lamp from "@/assets/image/lamp/lamp.png";
-import centerFlores from "@/assets/image/flores/center.jpg";
 import { alice, euphorig, readex_pro } from "@/utils/fonts";
+import Lamp from "@/../public/images/lamp/lamp.png";
+import centerFlores from "@/../public/images/flores/center.jpg";
 
 const TimeBack = () => {
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  const eventDate = new Date("2024-10-27T00:00:00");
+  const eventDate = new Date("2024-10-27");
 
   const [countdown, setCountdown] = useState({
     days: 0,

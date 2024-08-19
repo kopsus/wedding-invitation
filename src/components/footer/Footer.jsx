@@ -1,7 +1,8 @@
 import Image from "next/image";
 import React from "react";
-import imgPerson from "@/assets/image/person/person2.jpg";
-import imgMerak from "@/assets/image/merak/merak-footer.png";
+import imgPerson from "@/../public/images/person/person2.jpg";
+import imgMerak from "@/../public/images/merak/merak-footer.png";
+import butterFly from "@/../public/images/butterfly/kupu_small.gif";
 import {
   alice,
   nightStillComes,
@@ -18,7 +19,7 @@ const Footer = () => {
         <Image src={imgPerson} alt="" width={0} height={0} />
         <div className="absolute bg-gradient-to-t from-white h-1/6 bottom-0 w-full"></div>
       </div>
-      <div className="bg-[#ededea] text-center">
+      <div className="bg-[#ededea] text-center relative">
         <p
           className={`${alice.className} text-[15px] font-medium leading-[23px] text-center px-5`}
         >
@@ -47,6 +48,11 @@ const Footer = () => {
         <p className={`${alice.className} py-10`}>
           Kedua Mempelai & Keluagra Besa
         </p>
+        <div className="absolute w-full h-full bottom-0 flex justify-center items-center">
+          <div className="w-40 pt-48">
+            <Image src={butterFly} alt="" width={0} height={0} />
+          </div>
+        </div>
       </div>
       <div className="bg-[#ededea]">
         <Image src={imgMerak} alt="" width={0} height={0} />

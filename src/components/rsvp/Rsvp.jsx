@@ -1,4 +1,4 @@
-import imageGallery3 from "@/assets/image/person/person3.jpg";
+import imageGallery3 from "@/../public/images/person/person3.jpg";
 import { CiClock2 } from "react-icons/ci";
 import { alice, georgia, hathemBosteem, poppinsLight } from "@/utils/fonts";
 

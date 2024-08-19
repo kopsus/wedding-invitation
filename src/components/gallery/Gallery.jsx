@@ -1,14 +1,12 @@
-import { alice, cormorant, poppinsMedium, southernaire } from "@/utils/fonts";
+import { alice, southernaire } from "@/utils/fonts";
 import Image from "next/image";
 import React from "react";
-
-import imageGallery1 from "@/assets/image/person/person1.jpg";
-import imageGallery2 from "@/assets/image/person/person2.jpg";
-import imageGallery3 from "@/assets/image/person/person3.jpg";
-import imageGallery4 from "@/assets/image/person/person5.jpg";
-import imageGallery5 from "@/assets/image/person/person6.jpg";
-import imageGallery6 from "@/assets/image/person/person7.jpg";
-
+import imageGallery1 from "@/../public/images/person/person1.jpg";
+import imageGallery2 from "@/../public/images/person/person2.jpg";
+import imageGallery3 from "@/../public/images/person/person3.jpg";
+import imageGallery4 from "@/../public/images/person/person5.jpg";
+import imageGallery5 from "@/../public/images/person/person6.jpg";
+import imageGallery6 from "@/../public/images/person/person7.jpg";
 const Gallery = () => {
   return (
     <div className="flex flex-col pt-14 pb-10 bg-[#ededea]">

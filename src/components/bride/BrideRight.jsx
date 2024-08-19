@@ -1,65 +1,52 @@
 import Image from "next/image";
-import floreTopLeft from "@/assets/image/flores/top_left.jpg";
 import { FaInstagram } from "react-icons/fa";
-import rightBride from "@/assets/image/personal/rightBride.png";
 import { southernaire, nightStillComes, alice } from "@/utils/fonts";
 import Link from "next/link";
-import kupuSmall from "@/assets/image/butterfly/kupu_small.gif";
-import imageDan from "@/assets/image/image_&.png";
+import floreTopLeft from "@/../public/images/flores/top_left.jpg";
+import rightBride from "@/../public/images/personal/rightBride.png";
+import kupuSmall from "@/../public/images/butterfly/kupu_small.gif";
+import imageDan from "@/../public/images/image_&.png";
 
-const BrideRight = () => {
-  const biodataMempelaiWanita = [
-    {
-      namaPanggilan: "Nia",
-      namaLengakp: "Riza Cantika. M, Sos",
-      namaOrtu:
-        "Putra Kedua dari Bapak H. Maratua dan Ibu Hj. Yunar Lisma Pohan",
-      linkIg: "https://instagram.com",
-      potoProfile: rightBride,
-    },
-  ];
-
+const BrideRight = ({ dataMempelai }) => {
   return (
     <>
-      {biodataMempelaiWanita.map((value, index) => (
-        <div key={index} className="relative top-0 w-full h-full">
-          <Image src={floreTopLeft} alt="" width={0} height={0} />
-          <div className="absolute top-10 w-full h-full">
-            <div className="px-7 pt-5 flex flex-col items-start">
+      <div className="relative top-0 w-full h-full">
+        <Image src={floreTopLeft} alt="" width={0} height={0} />
+        <div className="absolute top-10 w-full h-full">
+          <div className="px-7 pt-5 flex flex-col items-start">
+            <p
+              className={`${southernaire.className} text-primary text-6xl font-medium`}
+            >
+              {dataMempelai.nama_panggilan_wanita}
+            </p>
+            <div className="mt-3 mb-5 flex flex-col">
               <p
-                className={`${southernaire.className} text-primary text-6xl font-medium`}
+                className={`text-[35px] font-medium text-(rgba(41,41,41)) ${nightStillComes.className}`}
               >
-                {value.namaPanggilan}
+                {dataMempelai.nama_lengkap_Wanita}
               </p>
-              <div className="mt-3 mb-5 flex flex-col">
-                <p
-                  className={`text-[35px] font-medium text-(rgba(41,41,41)) ${nightStillComes.className}`}
-                >
-                  {value.namaLengakp}
-                </p>
-                <p
-                  className={`${alice.className} text-gray-500 text-[17px] font-medium w-[65%]`}
-                >
-                  {value.namaOrtu}
-                </p>
-              </div>
-              <Link href={value.linkIg} target="_blank">
-                <FaInstagram
-                  color="white"
-                  size={28}
-                  className="bg-primary p-1 rounded-full cursor-pointer"
-                />
-              </Link>
+              <p
+                className={`${alice.className} text-gray-500 text-[17px] font-medium w-[65%]`}
+              >
+                {dataMempelai.nama_orang_tua_wanita}
+              </p>
             </div>
-            <div className="w-full">
-              <Image src={value.potoProfile} alt="" width={0} height={0} />
-            </div>
-            <div className="overflow-hidden w-48 absolute bottom-64 left-20">
-              <Image src={kupuSmall} alt="" width={0} height={0} />
-            </div>
+            <Link href={dataMempelai.instagram_wanita} target="_blank">
+              <FaInstagram
+                color="white"
+                size={28}
+                className="bg-primary p-1 rounded-full cursor-pointer"
+              />
+            </Link>
+          </div>
+          <div className="w-full">
+            <Image src={rightBride} alt="" width={0} height={0} />
+          </div>
+          <div className="overflow-hidden w-48 absolute bottom-64 left-20">
+            <Image src={kupuSmall} alt="" width={0} height={0} />
           </div>
         </div>
-      ))}
+      </div>
       <div className="pt-32 bg-[#ecece9]">
         <Image src={imageDan} alt="" width={0} height={0} />
       </div>

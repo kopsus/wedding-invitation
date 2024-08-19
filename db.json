@@ -1,0 +1,38 @@
+{
+  "mempelai": [
+    {
+      "id": "1",
+      "nama_lengkap_pria": "Bagus Pratama. M, Sos",
+      "nama_lengkap_Wanita": "Riza Cantika. M, Sos",
+      "nama_panggilan_pria": "Iyan",
+      "nama_panggilan_wanita": "Nia",
+      "nama_orang_tua_pria": "Putra Kedua dari Bapak H. Maratua dan Ibu Hj. Yunar Lisma Pohan",
+      "nama_orang_tua_wanita": "Putra Kedua dari Bapak H. Maratua dan Ibu Hj. Yunar Lisma Pohan",
+      "instagram_pria": "https://www.instagram.com/",
+      "instagram_wanita": "https://www.instagram.com/",
+      "timeline": "2024-10-27",
+      "foto_pria": "../../../public/images/leftBride.png",
+      "foto_wanita": "../../../public/images/personal/rightBride.png"
+    }
+  ],
+  "timeline": [
+    {
+      "id": "1",
+      "judul": "Akad Nikah",
+      "tanggal": "Minggu,22 Agustus 2024",
+      "waktu_mulai": "09:00",
+      "waktu_berakhir": "10:00",
+      "tempat": " AULA MASJID AL-NIZAM",
+      "maps": "Jl.Rawasari Timur No.04, RT.16 / RW.02 Cempaka Putih Timur, Cempaka Putih"
+    },
+    {
+      "id": "2",
+      "judul": "Resepsi Nikah",
+      "tanggal": "Minggu,22 Agustus 2024",
+      "waktu_mulai": "09:00",
+      "waktu_berakhir": "10:00",
+      "tempat": " AULA MASJID AL-NIZAM",
+      "maps": "Jl.Rawasari Timur No.04, RT.16 / RW.02 Cempaka Putih Timur, Cempaka Putih"
+    }
+  ]
+}

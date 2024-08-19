@@ -1,16 +1,16 @@
 "use client";
 
 import React, { useState } from "react";
-import Prince from "../../assets/image/Prince.png";
 import Image from "next/image";
 import { FaGift } from "react-icons/fa";
 import { alice, poppinsMedium, quicksand, southernaire } from "@/utils/fonts";
-import imageGallery1 from "@/assets/image/person/person1.jpg";
-import imageGallery2 from "@/assets/image/person/person2.jpg";
-import imageGallery3 from "@/assets/image/person/person3.jpg";
-import imageGallery4 from "@/assets/image/person/person5.jpg";
-import imageGallery5 from "@/assets/image/person/person6.jpg";
-import imageGallery6 from "@/assets/image/person/person7.jpg";
+import Prince from "@/../public/images/Prince.png";
+import imageGallery1 from "@/../public/images/person/person1.jpg";
+import imageGallery2 from "@/../public/images/person/person2.jpg";
+import imageGallery3 from "@/../public/images/person/person3.jpg";
+import imageGallery4 from "@/../public/images/person/person5.jpg";
+import imageGallery5 from "@/../public/images/person/person6.jpg";
+import imageGallery6 from "@/../public/images/person/person7.jpg";
 
 // Import Swiper styles
 import { Swiper, SwiperSlide } from "swiper/react";

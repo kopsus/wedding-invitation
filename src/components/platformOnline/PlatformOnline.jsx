@@ -2,10 +2,10 @@ import Image from "next/image";
 import React from "react";
 import { FaInstagram } from "react-icons/fa";
 import { BsMagic } from "react-icons/bs";
-import floreLeftSide from "@/assets/image/flores/left_side.png";
-import floreRighttSide from "@/assets/image/flores/right_side.png";
 import { alice, quicksand, southernaire } from "@/utils/fonts";
-import butterFly from "@/assets/image/butterfly/kupu_big.gif";
+import floreLeftSide from "@/../public/images/flores/left_side.png";
+import floreRighttSide from "@/../public/images/flores/right_side.png";
+import butterFly from "@/../public/images/butterfly/kupu_big.gif";
 
 const PlatformOnline = () => {
   return (

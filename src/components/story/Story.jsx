@@ -1,11 +1,11 @@
 "use client";
 
 import Image from "next/image";
-import floreBottomRight from "@/assets/image/flores/bottom_right.jpg";
-import butterFly from "@/assets/image/butterfly/kupu_big.gif";
-import imageGallery3 from "@/assets/image/person/person3.jpg";
 import { cormorant, poppinsMedium, southernaire } from "@/utils/fonts";
 import Accordian, { AccordianItem } from "./AccordionItem";
+import floreBottomRight from "@/../public/images/flores/bottom_right.jpg";
+import butterFly from "@/../public/images/butterfly/kupu_big.gif";
+import imageGallery3 from "@/../public/images/person/person3.jpg";
 
 const Story = () => {
   const Story = [

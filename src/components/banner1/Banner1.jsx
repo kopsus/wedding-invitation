@@ -1,26 +1,23 @@
 "use client";
 
 import Image from "next/image";
-import imgBanner1 from "@/assets/image/banner/banner1.jpg";
+import imgBanner1 from "@/../public/images/banner/banner1.jpg";
 import { southernaire, quicksand, tms, poppinsMedium } from "@/utils/fonts";
 import { RiMailOpenFill } from "react-icons/ri";
-import { namaMempelai } from "@/utils";
 
-const Banner1 = () => {
+const Banner1 = ({ dataMempelai }) => {
   return (
     <div className="bg-red-400 min-h-screen overflow-hidden flex justify-center items-center relative">
       <div className="overflow-hidden h-screen w-full">
-        <Image src={imgBanner1} alt="" />
+        <Image src={imgBanner1} alt="" width={0} height={0} />
       </div>
       <div className="absolute bottom-5 flex flex-col gap-5 items-center">
-        {namaMempelai.map((value, index) => (
-          <p
-            key={index}
-            className={`${southernaire.className} text-primary text-[41px] font-light`}
-          >
-            {value.woman} & {value.man}
-          </p>
-        ))}
+        <p
+          className={`${southernaire.className} text-primary text-[41px] font-light`}
+        >
+          {dataMempelai.nama_panggilan_wanita} &{" "}
+          {dataMempelai.nama_panggilan_pria}
+        </p>
         <p
           className={`text-white text-[17px] font-medium ${quicksand.className}`}
         >
