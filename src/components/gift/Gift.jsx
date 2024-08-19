@@ -2,8 +2,12 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import { FaGift } from "react-icons/fa";
+
+// font
 import { alice, poppinsMedium, quicksand, southernaire } from "@/utils/fonts";
+
+// assets
+import { FaGift } from "react-icons/fa";
 import Prince from "@/../public/images/Prince.png";
 import imageGallery1 from "@/../public/images/person/person1.jpg";
 import imageGallery2 from "@/../public/images/person/person2.jpg";
@@ -17,8 +21,13 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { Autoplay } from "swiper/modules";
 
-const Gift = () => {
+// qrcode
+import { useQRCode } from "next-qrcode";
+
+const Gift = ({ params }) => {
   const [isOpen, setIsOpen] = useState(false);
+
+  const { Canvas } = useQRCode();
 
   return (
     <div
@@ -32,7 +41,7 @@ const Gift = () => {
           Wedding Gift
         </p>
         <p
-          className={`${alice.className} font-medium text-[#202020] text-center`}
+          className={`${alice.className} font-medium text-[#202020] text-center px-5`}
         >
           Doa restu merupakan karunia yang sangat berarti bagi kami, dan jika
           memberi adalah ungkapan tanda kasih anda, ando dapat memberi kado
@@ -53,7 +62,19 @@ const Gift = () => {
               Wedding Gift
             </p>
           </div>
-          {isOpen && <div className="h-52 w-52 border-2 border-primary"></div>}
+          {isOpen && (
+            <div className="border-2 border-primary">
+              <Canvas
+                text={decodeURIComponent(params.slug)}
+                options={{
+                  errorCorrectionLevel: "M",
+                  margin: 3,
+                  scale: 4,
+                  width: 200,
+                }}
+              />
+            </div>
+          )}
         </div>
       </div>
       <Swiper
