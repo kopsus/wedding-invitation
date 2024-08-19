@@ -54,19 +54,28 @@
   ],
   "rsvp": [
     {
-      "nama": "Undertaker",
-      "ucapan": "congrats!!!",
-      "konfirmasi_kehadiran": "hadir"
+      "id": "6436",
+      "nama": "csa",
+      "ucapan": "asda",
+      "konfirmasi_kehadiran": "Masih Ragu"
     },
     {
-      "nama": "Jhon chena",
-      "ucapan": "congrats!!!",
-      "konfirmasi_kehadiran": "tidak hadir"
+      "id": "a864",
+      "nama": "vbg",
+      "ucapan": "asdas",
+      "konfirmasi_kehadiran": "Tidak Hadir"
     },
     {
-      "nama": "Big Show",
-      "ucapan": "congrats!!!",
-      "konfirmasi_kehadiran": "masih ragu"
+      "id": "b133",
+      "nama": "bg",
+      "ucapan": "as",
+      "konfirmasi_kehadiran": "Hadir"
+    },
+    {
+      "id": "d451",
+      "nama": "ba",
+      "ucapan": "csa",
+      "konfirmasi_kehadiran": "Masih Ragu"
     }
   ]
 }

@@ -1,26 +1,34 @@
+"use client";
+
+import React, { useEffect, useState } from "react";
 import imageGallery3 from "@/../public/images/person/person3.jpg";
 import { CiClock2 } from "react-icons/ci";
 import { alice, georgia, hathemBosteem, poppinsLight } from "@/utils/fonts";
+import { getRsvp } from "@/api";
+import iconHadir from "@/../public/icon/icon_hadir.svg";
+import iconRagu from "@/../public/icon/icon_ragu.svg";
+import Image from "next/image";
+import { MdCancel } from "react-icons/md";
+import FormAddRsvp from "./FormAddRsvp";
 
 const Rsvp = () => {
-  const konfirmasiKehadiran = ["Hadir", "Tidak Hadir", "Masih Ragu"];
-  const dataKehadiran = [
-    {
-      name: "Name",
-      ucapan: "Selamat",
-      hadir: "Hadir",
-    },
-    {
-      name: "Name",
-      ucapan: "Selamat",
-      hadir: "Tidak Hadir",
-    },
-    {
-      name: "Name",
-      ucapan: "Selamat",
-      hadir: "Masih Ragu",
-    },
-  ];
+  const [dataKehadiran, setDataKehadiran] = useState([]);
+
+  const fetchRsvpData = async () => {
+    try {
+      const data = await getRsvp();
+      setDataKehadiran(data);
+    } catch (error) {
+      console.error("Gagal mendapatkan data RSVP", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchRsvpData();
+  }, []);
+
+  const countKehadiran = (status) =>
+    dataKehadiran.filter((item) => item.konfirmasi_kehadiran === status).length;
 
   return (
     <div
@@ -42,54 +50,31 @@ const Rsvp = () => {
           Konfirmasi Kehadiran & Ucapan Selamat
         </p>
       </div>
-      <div className="bg-[#eeeeeb] w-[90%] mx-auto rounded-lg ">
+      <div className="bg-[#eeeeeb] w-[90%] mx-auto rounded-lg">
         <div className="pt-3 border-b border-slate-200">
           <p className="text-center text-primary font-medium">Comment</p>
           <div className="grid grid-cols-3 mx-auto gap-5 w-[80%] text-[#b096a4]">
             <div className="text-center border border-[#b096a4] p-2 rounded-md my-5">
-              <p className="text-lg font-bold leading-7">2</p>
+              <p className="text-lg font-bold leading-7">
+                {countKehadiran("Hadir")}
+              </p>
               <p className={`${poppinsLight.className} text-xs`}>Hadir</p>
             </div>
             <div className="text-center border border-[#b096a4] p-2 rounded-md my-5">
-              <p className="text-lg font-bold leading-7">2</p>
+              <p className="text-lg font-bold leading-7">
+                {countKehadiran("Tidak Hadir")}
+              </p>
               <p className={`${poppinsLight.className} text-xs`}>Tidak Hadir</p>
             </div>
             <div className="text-center border border-[#b096a4] p-2 rounded-md my-5">
-              <p className="text-lg font-bold leading-7">2</p>
-              <p className={`${poppinsLight.className} text-xs`}>Hadir</p>
+              <p className="text-lg font-bold leading-7">
+                {countKehadiran("Masih Ragu")}
+              </p>
+              <p className={`${poppinsLight.className} text-xs`}>Masih Ragu</p>
             </div>
           </div>
         </div>
-        <form
-          action=""
-          className="w-[90%] mx-auto flex flex-col items-start gap-3 mt-3 border-b border-slate-200 pb-3"
-        >
-          <input
-            type="text"
-            placeholder="Nama"
-            className="input input-bordered input-sm w-full"
-          />
-          <textarea
-            placeholder="Ucapan"
-            className="textarea textarea-bordered w-full"
-          />
-          <select className="select select-bordered w-full select-sm">
-            <option disabled selected>
-              Konfirmasi Kehadiran
-            </option>
-            {konfirmasiKehadiran.map((value, index) => (
-              <option key={index} value={value}>
-                {value}
-              </option>
-            ))}
-          </select>
-          <button
-            type="submit"
-            className="bg-primary px-6 py-2 rounded-md text-white font-medium"
-          >
-            Kirim
-          </button>
-        </form>
+        <FormAddRsvp onRsvpAdded={fetchRsvpData} />
         <div
           className="max-h-52 overflow-y-auto"
           style={{ scrollbarWidth: "none" }}
@@ -97,8 +82,17 @@ const Rsvp = () => {
           {dataKehadiran.map((value, index) => (
             <div key={index} className="px-10 py-5 border">
               <div className="flex items-center gap-2 mb-2">
-                <p className="text-sm font-bold text-primary">{value.name}</p>
-                <p>icon {value.hadir}</p>
+                <p className="text-sm font-bold text-primary">{value.nama}</p>
+                <div className="flex items-center gap-2">
+                  <p>icon</p>
+                  {value.konfirmasi_kehadiran === "Hadir" ? (
+                    <Image src={iconHadir} alt="" width={0} height={0} />
+                  ) : value.konfirmasi_kehadiran === "Masih Ragu" ? (
+                    <Image src={iconRagu} alt="" width={0} height={0} />
+                  ) : (
+                    <MdCancel color="red" />
+                  )}
+                </div>
               </div>
               <p className="text-sm">{value.ucapan}</p>
               <div className="flex items-center gap-1 text-[11px] text-primary mt-1">

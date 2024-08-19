@@ -24,3 +24,9 @@ export const getRsvp = async () => {
 
   return res.data;
 };
+
+export const creteRsvp = async (body) => {
+  const res = await axios.post(`${baseURL}/rsvp`, body);
+
+  return res.data;
+};
