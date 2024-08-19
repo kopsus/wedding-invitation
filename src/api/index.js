@@ -54,3 +54,9 @@ export const getgallery = async () => {
 
   return res.data;
 };
+
+export const getFooter = async () => {
+  const res = await axios.get(`${baseURL}/footer`);
+
+  return res.data;
+};

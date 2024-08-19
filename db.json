@@ -127,5 +127,6 @@
       "id": "6",
       "image": "/images/person/person7.jpg"
     }
-  ]
+  ],
+  "footer": [{ "id": "1", "image": "/images/person/person2.jpg" }]
 }

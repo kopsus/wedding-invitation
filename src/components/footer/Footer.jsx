@@ -1,24 +1,33 @@
 import Image from "next/image";
 import React from "react";
+
+// assets
 import imgPerson from "@/../public/images/person/person2.jpg";
 import imgMerak from "@/../public/images/merak/merak-footer.png";
 import butterFly from "@/../public/images/butterfly/kupu_small.gif";
+import { IoMdBasketball } from "react-icons/io";
+import { FaInstagram, FaWhatsapp } from "react-icons/fa";
+
+// fonts
 import {
   alice,
   nightStillComes,
   poppinsSemiBold,
   southernaire,
 } from "@/utils/fonts";
-import { IoMdBasketball } from "react-icons/io";
-import { FaInstagram, FaWhatsapp } from "react-icons/fa";
+import { getFooter } from "@/api";
 
-const Footer = () => {
+const Footer = async () => {
+  const data = await getFooter();
+
   return (
     <div>
-      <div className="h-96 relative ">
-        <Image src={imgPerson} alt="" width={0} height={0} />
-        <div className="absolute bg-gradient-to-t from-white h-1/6 bottom-0 w-full"></div>
-      </div>
+      {data.map((value, index) => (
+        <div key={index} className="h-96 relative ">
+          <Image src={value.image} alt="" layout="fill" />
+          <div className="absolute bg-gradient-to-t from-white h-1/6 bottom-0 w-full"></div>
+        </div>
+      ))}
       <div className="bg-[#ededea] text-center relative">
         <p
           className={`${alice.className} text-[15px] font-medium leading-[23px] text-center px-5`}
