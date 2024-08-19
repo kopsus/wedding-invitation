@@ -1,13 +1,10 @@
 import { alice, southernaire } from "@/utils/fonts";
 import Image from "next/image";
 import React from "react";
-import imageGallery1 from "@/../public/images/person/person1.jpg";
-import imageGallery2 from "@/../public/images/person/person2.jpg";
-import imageGallery3 from "@/../public/images/person/person3.jpg";
-import imageGallery4 from "@/../public/images/person/person5.jpg";
-import imageGallery5 from "@/../public/images/person/person6.jpg";
-import imageGallery6 from "@/../public/images/person/person7.jpg";
-const Gallery = () => {
+import { getgallery } from "@/api";
+const Gallery = async () => {
+  const data = await getgallery();
+
   return (
     <div className="flex flex-col pt-14 pb-10 bg-[#ededea]">
       <p
@@ -22,24 +19,15 @@ const Gallery = () => {
         will.&quot;
       </p>
       <div className="grid grid-cols-2 gap-3 px-5 mt-9">
-        <div className="overflow-hidden border-2 border-primary rounded-md h-96">
-          <Image src={imageGallery1} alt="" width={0} height={0} />
-        </div>
-        <div className="overflow-hidden border-2 border-primary rounded-md h-96">
-          <Image src={imageGallery2} alt="" width={0} height={0} />
-        </div>
-        <div className="overflow-hidden border-2 border-primary rounded-md h-96">
-          <Image src={imageGallery3} alt="" width={0} height={0} />
-        </div>
-        <div className="overflow-hidden border-2 border-primary rounded-md h-96">
-          <Image src={imageGallery4} alt="" width={0} height={0} />
-        </div>
-        <div className="overflow-hidden border-2 border-primary rounded-md h-96">
-          <Image src={imageGallery5} alt="" width={0} height={0} />
-        </div>
-        <div className="overflow-hidden border-2 border-primary rounded-md h-96">
-          <Image src={imageGallery6} alt="" width={0} height={0} />
-        </div>
+        {data.map((value, index) => (
+          <div
+            key={index}
+            className="relative overflow-hidden border-2 border-primary rounded-md h-96 cursor-pointer group"
+          >
+            <Image src={value.image} alt="" layout="fill" objectFit="cover" />
+            <div className="w-full h-full bg-black/50 absolute top-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          </div>
+        ))}
       </div>
     </div>
   );

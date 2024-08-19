@@ -11,8 +11,8 @@
       "instagram_pria": "https://www.instagram.com/",
       "instagram_wanita": "https://www.instagram.com/",
       "timeline": "2024-10-27",
-      "foto_pria": "../../../public/images/leftBride.png",
-      "foto_wanita": "../../../public/images/personal/rightBride.png"
+      "foto_pria": "/images/personal/leftBride.png",
+      "foto_wanita": "/images/personal/rightBride.png"
     }
   ],
   "timeline": [
@@ -88,6 +88,32 @@
     {
       "id": "1",
       "link": "https://www.youtube.com/embed?v=-hzFTJDJGkQ&list=RDMoN9ql6Yymw&index=10"
+    }
+  ],
+  "gallery": [
+    {
+      "id": "1",
+      "image": "/images/person/person1.jpg"
+    },
+    {
+      "id": "2",
+      "image": "/images/person/person2.jpg"
+    },
+    {
+      "id": "3",
+      "image": "/images/person/person3.jpg"
+    },
+    {
+      "id": "4",
+      "image": "/images/person/person5.jpg"
+    },
+    {
+      "id": "5",
+      "image": "/images/person/person6.jpg"
+    },
+    {
+      "id": "6",
+      "image": "/images/person/person7.jpg"
     }
   ]
 }
