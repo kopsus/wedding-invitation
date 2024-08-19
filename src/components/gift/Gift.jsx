@@ -12,16 +12,13 @@ import imageGallery4 from "@/../public/images/person/person5.jpg";
 import imageGallery5 from "@/../public/images/person/person6.jpg";
 import imageGallery6 from "@/../public/images/person/person7.jpg";
 
-// Import Swiper styles
+// swipper
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
+import { Autoplay } from "swiper/modules";
 
 const Gift = () => {
   const [isOpen, setIsOpen] = useState(false);
-
-  const handleOpen = () => {
-    setIsOpen(!open);
-  };
 
   return (
     <div
@@ -63,8 +60,12 @@ const Gift = () => {
         className="mySwiper mt-10"
         slidesPerView={4}
         spaceBetween={5}
-        autoplay={true}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
         loop={true}
+        modules={[Autoplay]}
       >
         <SwiperSlide>
           <div className="h-28 overflow-hidden border-2 border-white rounded-md">
