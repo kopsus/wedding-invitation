@@ -1,4 +1,4 @@
-import { getMempelai } from "@/api/mempelai";
+import { getMempelai } from "@/api";
 import Banner1 from "@/components/banner1/Banner1";
 import Banner2 from "@/components/banner2/Banner2";
 import BrideLeft from "@/components/bride/BrideLeft";

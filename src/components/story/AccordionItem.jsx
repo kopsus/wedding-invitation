@@ -1,3 +1,5 @@
+"use client";
+
 import { alice, nightStillComes } from "@/utils/fonts";
 import { createContext, useContext, useRef, useEffect, useState } from "react";
 import { MdArrowRight } from "react-icons/md";

@@ -1,33 +1,13 @@
-"use client";
-
 import Image from "next/image";
 import { cormorant, poppinsMedium, southernaire } from "@/utils/fonts";
 import Accordian, { AccordianItem } from "./AccordionItem";
 import floreBottomRight from "@/../public/images/flores/bottom_right.jpg";
 import butterFly from "@/../public/images/butterfly/kupu_big.gif";
 import imageGallery3 from "@/../public/images/person/person3.jpg";
+import { getStory } from "@/api";
 
-const Story = () => {
-  const Story = [
-    {
-      title: "Awal Bertemu",
-      date: "15 April 2022",
-      story:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit.Blanditiis, aliquid modi officia perspiciatis sit molestiae corrupti placeat veritatis rem aliquam voluptas.",
-    },
-    {
-      title: "Lamaran",
-      date: "15 April 2022",
-      story:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit.Blanditiis, aliquid modi officia perspiciatis sit molestiae corrupti placeat veritatis rem aliquam voluptas.",
-    },
-    {
-      title: "Resepsi",
-      date: "15 April 2022",
-      story:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit.Blanditiis, aliquid modi officia perspiciatis sit molestiae corrupti placeat veritatis rem aliquam voluptas.",
-    },
-  ];
+const Story = async () => {
+  const story = await getStory();
 
   return (
     <div
@@ -61,10 +41,10 @@ const Story = () => {
             terduga&quot;
           </p>
         </div>
-        {Story.map((value, index) => (
+        {story.map((value, index) => (
           <Accordian key={index}>
-            <AccordianItem value={value.title} trigger={value.title}>
-              <p className="mb-5">{value.date}</p>
+            <AccordianItem value={value.judul} trigger={value.judul}>
+              <p className="mb-5">{value.tanggal}</p>
               <p>{value.story}</p>
             </AccordianItem>
           </Accordian>

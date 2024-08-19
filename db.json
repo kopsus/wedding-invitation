@@ -34,5 +34,39 @@
       "tempat": " AULA MASJID AL-NIZAM",
       "maps": "Jl.Rawasari Timur No.04, RT.16 / RW.02 Cempaka Putih Timur, Cempaka Putih"
     }
+  ],
+  "story": [
+    {
+      "judul": "Awal Bertemu",
+      "tanggal": "15 April 2022",
+      "story": "Lorem ipsum dolor sit amet consectetur adipisicing elit.Blanditiis, aliquid modi officia perspiciatis sit molestiae corrupti placeat veritatis rem aliquam voluptas."
+    },
+    {
+      "judul": "Lamaran",
+      "tanggal": "15 April 2022",
+      "story": "Lorem ipsum dolor sit amet consectetur adipisicing elit.Blanditiis, aliquid modi officia perspiciatis sit molestiae corrupti placeat veritatis rem aliquam voluptas."
+    },
+    {
+      "judul": "Resepsi",
+      "tanggal": "15 April 2022",
+      "story": "Lorem ipsum dolor sit amet consectetur adipisicing elit.Blanditiis, aliquid modi officia perspiciatis sit molestiae corrupti placeat veritatis rem aliquam voluptas."
+    }
+  ],
+  "rsvp": [
+    {
+      "nama": "Undertaker",
+      "ucapan": "congrats!!!",
+      "konfirmasi_kehadiran": "hadir"
+    },
+    {
+      "nama": "Jhon chena",
+      "ucapan": "congrats!!!",
+      "konfirmasi_kehadiran": "tidak hadir"
+    },
+    {
+      "nama": "Big Show",
+      "ucapan": "congrats!!!",
+      "konfirmasi_kehadiran": "masih ragu"
+    }
   ]
 }
