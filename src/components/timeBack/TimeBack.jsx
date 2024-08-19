@@ -6,10 +6,7 @@ import { alice, euphorig, readex_pro } from "@/utils/fonts";
 import Lamp from "@/../public/images/lamp/lamp.png";
 import centerFlores from "@/../public/images/flores/center.jpg";
 
-const TimeBack = () => {
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  const eventDate = new Date("2024-10-27");
-
+const TimeBack = ({ dataMempelai }) => {
   const [countdown, setCountdown] = useState({
     days: 0,
     hours: 0,
@@ -18,6 +15,12 @@ const TimeBack = () => {
   });
 
   useEffect(() => {
+    const eventDate = new Date(dataMempelai.timeline);
+    if (isNaN(eventDate.getTime())) {
+      console.error("Tanggal tidak valid:", dataMempelai.timeline);
+      return;
+    }
+
     const updateCountdown = () => {
       const now = new Date();
       const timeDiff = eventDate - now;
@@ -42,7 +45,7 @@ const TimeBack = () => {
     updateCountdown();
 
     return () => clearInterval(intervalId);
-  }, []);
+  }, [dataMempelai.timeline]);
 
   return (
     <div className="h-[65vh]">

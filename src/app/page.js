@@ -20,7 +20,7 @@ export default async function Home() {
     <>
       <Banner1 dataMempelai={data[0]} />
       <Banner2 dataMempelai={data[0]} />
-      <TimeBack />
+      <TimeBack dataMempelai={data[0]} />
       <BrideRight dataMempelai={data[0]} />
       <BrideLeft dataMempelai={data[0]} />
       <TimeLine />
