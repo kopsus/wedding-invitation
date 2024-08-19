@@ -5,7 +5,7 @@ import imgBanner1 from "@/../public/images/banner/banner1.jpg";
 import { southernaire, quicksand, tms, poppinsMedium } from "@/utils/fonts";
 import { RiMailOpenFill } from "react-icons/ri";
 
-const Banner1 = ({ dataMempelai }) => {
+const Banner1 = ({ dataMempelai, params }) => {
   return (
     <div className="bg-red-400 min-h-screen overflow-hidden flex justify-center items-center relative">
       <div className="overflow-hidden h-screen w-full">
@@ -26,7 +26,7 @@ const Banner1 = ({ dataMempelai }) => {
         <p
           className={`${tms.className} text-primary text-[26px] font-semibold`}
         >
-          Nama Tamu
+          {decodeURIComponent(params.slug)}
         </p>
         <div className="bg-primary py-2 px-5 rounded-md text-white flex items-center gap-2 cursor-pointer">
           <RiMailOpenFill />
