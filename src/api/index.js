@@ -60,3 +60,9 @@ export const getFooter = async () => {
 
   return res.data;
 };
+
+export const getAudio = async () => {
+  const res = await axios.get(`${baseURL}/audio`);
+
+  return res.data;
+};

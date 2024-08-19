@@ -1,9 +1,20 @@
+"use client";
+
 import { alice, southernaire } from "@/utils/fonts";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { getgallery } from "@/api";
-const Gallery = async () => {
-  const data = await getgallery();
+const Gallery = () => {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const res = await getgallery();
+      setData(res);
+    };
+
+    fetchData();
+  }, []);
 
   return (
     <div className="flex flex-col pt-14 pb-10 bg-[#ededea]">

@@ -1,5 +1,7 @@
+"use client";
+
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { FaClock } from "react-icons/fa";
 import { IoLocationSharp } from "react-icons/io5";
 import centerFlores from "@/../public/images/flores/center.jpg";
@@ -15,8 +17,17 @@ import {
 import Link from "next/link";
 import { getProgram } from "@/api";
 
-export const TimeLine = async () => {
-  const data = await getProgram();
+export const TimeLine = () => {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const res = await getProgram();
+      setData(res);
+    };
+
+    fetchData();
+  }, []);
 
   return (
     <div className="relative h-[1200px]">

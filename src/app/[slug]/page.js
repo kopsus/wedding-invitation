@@ -17,7 +17,7 @@ import { TimeLine } from "@/components/timeline/TimeLine";
 import Youtube from "@/components/youtube/Youtube";
 import { FaPause, FaPlay } from "react-icons/fa";
 
-export default function Home() {
+export default function Home({ params }) {
   const [data, setData] = useState(null);
   const [dataAudio, setDataAudio] = useState([]);
   const [showContent, setShowContent] = useState(false);
@@ -62,7 +62,11 @@ export default function Home() {
 
   return (
     <>
-      <Banner1 dataMempelai={data} scrollToContent={scrollToContent} />
+      <Banner1
+        dataMempelai={data}
+        scrollToContent={scrollToContent}
+        params={params}
+      />
       {showContent && (
         <>
           <div ref={contentRef}>
@@ -75,7 +79,7 @@ export default function Home() {
             <Story />
             <PlatformOnline />
             <Rsvp />
-            <Gift />
+            <Gift params={params} />
             <Youtube />
             <Footer />
           </div>

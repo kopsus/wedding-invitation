@@ -1,8 +1,9 @@
+"use client";
+
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 // assets
-import imgPerson from "@/../public/images/person/person2.jpg";
 import imgMerak from "@/../public/images/merak/merak-footer.png";
 import butterFly from "@/../public/images/butterfly/kupu_small.gif";
 import { IoMdBasketball } from "react-icons/io";
@@ -17,8 +18,17 @@ import {
 } from "@/utils/fonts";
 import { getFooter } from "@/api";
 
-const Footer = async () => {
-  const data = await getFooter();
+const Footer = () => {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const res = await getFooter();
+      setData(res);
+    };
+
+    fetchData();
+  }, []);
 
   return (
     <div>

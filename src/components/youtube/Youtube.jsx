@@ -1,8 +1,19 @@
-import { getYoutubeLink } from "@/api";
-import React from "react";
+"use client";
 
-const Youtube = async () => {
-  const data = await getYoutubeLink();
+import { getYoutubeLink } from "@/api";
+import React, { useEffect, useState } from "react";
+
+const Youtube = () => {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const res = await getYoutubeLink();
+      setData(res);
+    };
+
+    fetchData();
+  }, []);
 
   return (
     <div className="shadow-md w-full h-80 p-10 bg-[#ecece9]">

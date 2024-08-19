@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import Accordian, { AccordianItem } from "./AccordionItem";
 import { getLove, getStory } from "@/api";
@@ -8,10 +10,22 @@ import { cormorant, poppinsMedium, southernaire } from "@/utils/fonts";
 // assets
 import butterFly from "@/../public/images/butterfly/kupu_big.gif";
 import floreBottomRight from "@/../public/images/flores/bottom_right.jpg";
+import { useEffect, useState } from "react";
 
-const Story = async () => {
-  const story = await getStory();
-  const love = await getLove();
+const Story = () => {
+  const [dataStory, setDataStory] = useState([]);
+  const [dataLove, setDataLove] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const story = await getStory();
+      const love = await getLove();
+      setDataStory(story);
+      setDataLove(love);
+    };
+
+    fetchData();
+  }, []);
 
   return (
     <div
@@ -21,7 +35,7 @@ const Story = async () => {
       }}
     >
       <div className="border-2 border-primary">
-        {love.map((value, index) => (
+        {dataLove.map((value, index) => (
           <div
             key={index}
             className="overflow-hidden mt-20 mx-20 mb-5 rounded-3xl"
@@ -50,7 +64,7 @@ const Story = async () => {
             terduga&quot;
           </p>
         </div>
-        {story.map((value, index) => (
+        {dataStory.map((value, index) => (
           <Accordian key={index}>
             <AccordianItem value={value.judul} trigger={value.judul}>
               <p className="mb-5">{value.tanggal}</p>
