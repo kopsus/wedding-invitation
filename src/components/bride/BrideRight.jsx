@@ -39,15 +39,21 @@ const BrideRight = ({ dataMempelai }) => {
               />
             </Link>
           </div>
-          <div className="w-full">
-            <Image src={rightBride} alt="" width={0} height={0} />
+          <div className="w-full h-full relative overflow-hidden">
+            <Image
+              src={dataMempelai.foto_wanita}
+              alt=""
+              objectFit="contain"
+              layout="fill"
+              objectPosition="top"
+            />
           </div>
           <div className="overflow-hidden w-48 absolute bottom-64 left-20">
             <Image src={kupuSmall} alt="" width={0} height={0} />
           </div>
         </div>
       </div>
-      <div className="pt-32 bg-[#ecece9]">
+      <div className="pt-20 bg-[#ecece9]">
         <Image src={imageDan} alt="" width={0} height={0} />
       </div>
     </>
