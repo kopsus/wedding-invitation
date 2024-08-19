@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 // fonts
@@ -10,10 +10,22 @@ import { southernaire, quicksand, tms, poppinsMedium } from "@/utils/fonts";
 // assets
 import { RiMailOpenFill } from "react-icons/ri";
 import imgBanner1 from "@/../public/images/banner/banner1.jpg";
-import { fadeInUp } from "@/utils/animation";
+import imgBanner2 from "@/../public/images/person/person2.jpg";
+import { fadeInUp, zoomIn } from "@/utils/animation";
 
 const Banner1 = ({ dataMempelai, params, scrollToContent }) => {
   const [showButton, setShowButton] = useState(true);
+  const images = [imgBanner1, imgBanner2];
+
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 5000); // Ganti gambar setiap 5 detik
+
+    return () => clearInterval(interval);
+  }, [images.length]);
 
   const handleClick = () => {
     setShowButton(false);
@@ -23,7 +35,22 @@ const Banner1 = ({ dataMempelai, params, scrollToContent }) => {
   return (
     <div className="min-h-screen overflow-hidden flex justify-center items-center relative">
       <div className="overflow-hidden h-screen w-full">
-        <Image src={imgBanner1} alt="" width={0} height={0} />
+        <motion.div
+          variants={zoomIn}
+          initial="hidden"
+          animate="visible"
+          transition={{ duration: 10, ease: "easeOut" }}
+          key={currentImageIndex}
+          className="relative w-full h-full"
+        >
+          <Image
+            src={images[currentImageIndex]}
+            alt=""
+            layout="fill"
+            objectFit="cover"
+            className="transition-transform duration-1000 ease-out"
+          />
+        </motion.div>
       </div>
       <div className="absolute bottom-5 flex flex-col gap-5 items-center">
         <motion.p

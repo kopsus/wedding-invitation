@@ -20,15 +20,9 @@ export const fadeIn = {
 
 export const zoomIn = {
   hidden: {
-    opacity: 0,
-    scale: 0.8,
+    scale: 1,
   },
   visible: {
-    opacity: 1,
-    scale: 1,
-    transition: {
-      duration: 3,
-      ease: "easeOut", // Menggunakan easeOut sebagai alternatif
-    },
+    scale: 1.5,
   },
 };
