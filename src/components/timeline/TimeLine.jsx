@@ -13,28 +13,10 @@ import {
   southernaire,
 } from "@/utils/fonts";
 import Link from "next/link";
+import { getTimeline } from "@/api";
 
-export const TimeLine = () => {
-  const akadNikah = [
-    {
-      id: "1",
-      title: "Akad Nikah",
-      date: "Minggu,22 Agustus 2024",
-      timeStart: "09:00",
-      timeEnd: "10:00",
-      place: " AULA MASJID AL-NIZAM",
-      maps: "Jl.Rawasari Timur No.04, RT.16 / RW.02 Cempaka Putih Timur, Cempaka Putih",
-    },
-    {
-      id: "2",
-      title: "Resepsi Nikah",
-      date: "Minggu,22 Agustus 2024",
-      timeStart: "09:00",
-      timeEnd: "10:00",
-      place: " AULA MASJID AL-NIZAM",
-      maps: "Jl.Rawasari Timur No.04, RT.16 / RW.02 Cempaka Putih Timur, Cempaka Putih",
-    },
-  ];
+export const TimeLine = async () => {
+  const data = await getTimeline();
 
   return (
     <div className="relative h-[1200px]">
@@ -45,7 +27,7 @@ export const TimeLine = () => {
         <div className="w-36 mx-auto my-10">
           <Image src={merakPutih} alt="" width={0} height={0} />
         </div>
-        {akadNikah.map((value, index) => (
+        {data.map((value, index) => (
           <div
             key={index}
             className="relative h-[450px] shadow-md shadow-black mb-16"
@@ -59,25 +41,25 @@ export const TimeLine = () => {
                   <p
                     className={`${southernaire.className} text-[47px] font-light text-primary`}
                   >
-                    {value.title}
+                    {value.judul}
                   </p>
                   <p
                     className={`${poppinsMedium.className} text-[17px] font-medium`}
                   >
-                    {value.date}
+                    {value.tanggal}
                   </p>
                 </div>
                 <div className="flex flex-col mt-10 items-center">
                   <div className="flex items-center gap-2">
                     <FaClock size={24} />
                     <p className={`${poppinsMedium.className} text-base`}>
-                      {value.timeStart} WIB - {value.timeEnd} WIB
+                      {value.waktu_mulai} WIB - {value.waktu_berakhir} WIB
                     </p>
                   </div>
                   <p
                     className={`${poppinsSemiBold.className} text-lg text-primary mt-5 mb-1`}
                   >
-                    {value.place}
+                    {value.tempat}
                   </p>
                   <p
                     className={`${alice.className} text-base font-medium text-center text-[rgb(90, 90, 90)]`}
