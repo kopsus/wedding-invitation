@@ -1,15 +1,23 @@
 import Image from "next/image";
 import React from "react";
-import imgBanner2 from "@/../public/images/banner/banner2.jpg";
 import { nightStillComes, southernaire } from "@/utils/fonts";
 import { formatDate } from "@/utils/format";
+import { getBanner2 } from "@/api";
 
-const Banner2 = ({ dataMempelai }) => {
-  console.log("data mempelai", dataMempelai.timeline);
+const Banner2 = async ({ dataMempelai }) => {
+  const data = await getBanner2();
 
   return (
     <div className="max-h-screen overflow-hidden flex justify-center items-center relative">
-      <Image src={imgBanner2} alt="banner 2" className="" />
+      {data.map((value, index) => (
+        <Image
+          key={index}
+          src={value.image}
+          alt="banner 2"
+          width={1080}
+          height={1080}
+        />
+      ))}
       <div className="absolute right-24 bottom-44 text-primary">
         <p className={`${southernaire.className} text-[45px] font-medium`}>
           {dataMempelai.nama_panggilan_wanita} &{" "}

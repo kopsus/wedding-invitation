@@ -1,11 +1,13 @@
-"use client";
-
 import Image from "next/image";
-import imgBanner1 from "@/../public/images/banner/banner1.jpg";
+
+// font
 import { southernaire, quicksand, tms, poppinsMedium } from "@/utils/fonts";
+
+// assets
+import imgBanner1 from "@/../public/images/banner/banner1.jpg";
 import { RiMailOpenFill } from "react-icons/ri";
 
-const Banner1 = ({ dataMempelai, params }) => {
+const Banner1 = async ({ dataMempelai, params }) => {
   return (
     <div className="bg-red-400 min-h-screen overflow-hidden flex justify-center items-center relative">
       <div className="overflow-hidden h-screen w-full">

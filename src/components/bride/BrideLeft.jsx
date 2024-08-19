@@ -9,7 +9,7 @@ import kupuSmall from "@/../public/images/butterfly/kupu_small.gif";
 const BrideLeft = ({ dataMempelai }) => {
   return (
     <div
-      className="min-h-screen bg-cover bg-no-repeat bg-bottom"
+      className="min-h-screen bg-cover bg-no-repeat bg-bottom relative bg-red-400"
       style={{ backgroundImage: `url(${bottom_right.src})` }}
     >
       <div className="px-7 pt-5 flex flex-col items-end">
@@ -41,7 +41,7 @@ const BrideLeft = ({ dataMempelai }) => {
       <div className="w-full h-full relative overflow-hidden">
         <Image src={dataMempelai.foto_pria} alt="" width={1080} height={1080} />
       </div>
-      <div className="overflow-hidden w-48 absolute bottom-64 left-20">
+      <div className="overflow-hidden w-48 absolute bottom-64 right-0">
         <Image src={kupuSmall} alt="" width={0} height={0} />
       </div>
     </div>

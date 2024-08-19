@@ -1,9 +1,12 @@
 import Image from "next/image";
-import { FaInstagram } from "react-icons/fa";
-import { southernaire, nightStillComes, alice } from "@/utils/fonts";
 import Link from "next/link";
+
+// font
+import { southernaire, nightStillComes, alice } from "@/utils/fonts";
+
+// assets
+import { FaInstagram } from "react-icons/fa";
 import floreTopLeft from "@/../public/images/flores/top_left.jpg";
-import rightBride from "@/../public/images/personal/rightBride.png";
 import kupuSmall from "@/../public/images/butterfly/kupu_small.gif";
 import imageDan from "@/../public/images/image_&.png";
 
@@ -53,7 +56,7 @@ const BrideRight = ({ dataMempelai }) => {
           </div>
         </div>
       </div>
-      <div className="pt-20 bg-[#ecece9]">
+      <div className="sm:pt-20 pt-40 bg-[#ecece9]">
         <Image src={imageDan} alt="" width={0} height={0} />
       </div>
     </>

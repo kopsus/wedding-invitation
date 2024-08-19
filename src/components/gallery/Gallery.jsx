@@ -22,7 +22,7 @@ const Gallery = async () => {
         {data.map((value, index) => (
           <div
             key={index}
-            className="relative overflow-hidden border-2 border-primary rounded-md h-96 cursor-pointer group"
+            className="relative overflow-hidden border-2 border-primary rounded-md sm:h-96 h-52 cursor-pointer group"
           >
             <Image src={value.image} alt="" layout="fill" objectFit="cover" />
             <div className="w-full h-full bg-black/50 absolute top-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>

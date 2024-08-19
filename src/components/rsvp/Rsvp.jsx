@@ -1,18 +1,23 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import imageGallery3 from "@/../public/images/person/person3.jpg";
-import { CiClock2 } from "react-icons/ci";
+import Image from "next/image";
+import { getLove, getRsvp } from "@/api";
+
+// font
 import { alice, georgia, hathemBosteem, poppinsLight } from "@/utils/fonts";
-import { getRsvp } from "@/api";
+
+// assets
+import { CiClock2 } from "react-icons/ci";
+import imageGallery3 from "@/../public/images/person/person1.jpg";
 import iconHadir from "@/../public/icon/icon_hadir.svg";
 import iconRagu from "@/../public/icon/icon_ragu.svg";
-import Image from "next/image";
 import { MdCancel } from "react-icons/md";
 import FormAddRsvp from "./FormAddRsvp";
 
 const Rsvp = () => {
   const [dataKehadiran, setDataKehadiran] = useState([]);
+  const [dataLove, setDataLove] = useState([]);
 
   const fetchRsvpData = async () => {
     try {
@@ -23,8 +28,14 @@ const Rsvp = () => {
     }
   };
 
+  const fetcLoveData = async () => {
+    const data = await getLove();
+    setDataLove(data);
+  };
+
   useEffect(() => {
     fetchRsvpData();
+    fetcLoveData();
   }, []);
 
   const countKehadiran = (status) =>

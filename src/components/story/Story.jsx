@@ -1,13 +1,17 @@
 import Image from "next/image";
-import { cormorant, poppinsMedium, southernaire } from "@/utils/fonts";
 import Accordian, { AccordianItem } from "./AccordionItem";
-import floreBottomRight from "@/../public/images/flores/bottom_right.jpg";
+import { getLove, getStory } from "@/api";
+
+// fonts
+import { cormorant, poppinsMedium, southernaire } from "@/utils/fonts";
+
+// assets
 import butterFly from "@/../public/images/butterfly/kupu_big.gif";
-import imageGallery3 from "@/../public/images/person/person3.jpg";
-import { getStory } from "@/api";
+import floreBottomRight from "@/../public/images/flores/bottom_right.jpg";
 
 const Story = async () => {
   const story = await getStory();
+  const love = await getLove();
 
   return (
     <div
@@ -17,9 +21,14 @@ const Story = async () => {
       }}
     >
       <div className="border-2 border-primary">
-        <div className="overflow-hidden mt-20 mx-20 mb-5 rounded-3xl">
-          <Image src={imageGallery3} alt="" width={0} height={0} />
-        </div>
+        {love.map((value, index) => (
+          <div
+            key={index}
+            className="overflow-hidden mt-20 mx-20 mb-5 rounded-3xl"
+          >
+            <Image src={value.image} alt="" width={1080} height={1080} />
+          </div>
+        ))}
         <p
           className={`${cormorant.className} text-3xl text-center text-neutral-500`}
         >
@@ -35,7 +44,7 @@ const Story = async () => {
             Story
           </p>
           <p
-            className={`${poppinsMedium.className} text-base px-24 text-center text-primary mb-5`}
+            className={`${poppinsMedium.className} text-base sm:px-24 text-center text-primary mb-5`}
           >
             &quot;Datangnya cinta adalah takdir, dia datang tak pernah
             terduga&quot;

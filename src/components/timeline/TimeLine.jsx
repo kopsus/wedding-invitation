@@ -13,10 +13,10 @@ import {
   southernaire,
 } from "@/utils/fonts";
 import Link from "next/link";
-import { getTimeline } from "@/api";
+import { getProgram } from "@/api";
 
 export const TimeLine = async () => {
-  const data = await getTimeline();
+  const data = await getProgram();
 
   return (
     <div className="relative h-[1200px]">

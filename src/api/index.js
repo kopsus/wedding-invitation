@@ -7,8 +7,20 @@ export const getMempelai = async () => {
   return res.data;
 };
 
-export const getTimeline = async () => {
-  const res = await axios.get(`${baseURL}/timeline`);
+export const getBanner2 = async () => {
+  const res = await axios.get(`${baseURL}/banner2`);
+
+  return res.data;
+};
+
+export const getProgram = async () => {
+  const res = await axios.get(`${baseURL}/program`);
+
+  return res.data;
+};
+
+export const getLove = async () => {
+  const res = await axios.get(`${baseURL}/love`);
 
   return res.data;
 };
