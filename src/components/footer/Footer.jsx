@@ -65,7 +65,7 @@ const Footer = () => {
           Kami Yang Berbahagia
         </p>
         <p className={`${alice.className} py-10`}>
-          Kedua Mempelai & Keluagra Besa
+          Kedua Mempelai & Keluagra Besar
         </p>
         <div className="absolute w-full h-full bottom-0 flex justify-center items-center">
           <div className="w-40 pt-48">

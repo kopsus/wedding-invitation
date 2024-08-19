@@ -15,6 +15,7 @@ const FormAddRsvp = ({ onRsvpAdded }) => {
         nama: e.target.name.value,
         ucapan: e.target.ucapan.value,
         konfirmasi_kehadiran: selectedKehadiran,
+        waktu_submit: new Date().toISOString(),
       });
 
       if (onRsvpAdded) {

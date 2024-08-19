@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
+import { motion } from "framer-motion";
 
 // font
 import { southernaire, nightStillComes, alice } from "@/utils/fonts";
@@ -9,6 +9,7 @@ import { FaInstagram } from "react-icons/fa";
 import floreTopLeft from "@/../public/images/flores/top_left.jpg";
 import kupuSmall from "@/../public/images/butterfly/kupu_small.gif";
 import imageDan from "@/../public/images/image_&.png";
+import { fadeIn, fadeInUp } from "@/utils/animation";
 
 const BrideRight = ({ dataMempelai }) => {
   return (
@@ -22,7 +23,14 @@ const BrideRight = ({ dataMempelai }) => {
             >
               {dataMempelai.nama_panggilan_wanita}
             </p>
-            <div className="mt-3 mb-5 flex flex-col">
+            <motion.div
+              variants={fadeInUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              transition={{ duration: 1 }}
+              className="mt-3 mb-5 flex flex-col"
+            >
               <p
                 className={`text-[35px] font-medium text-(rgba(41,41,41)) ${nightStillComes.className}`}
               >
@@ -33,14 +41,22 @@ const BrideRight = ({ dataMempelai }) => {
               >
                 {dataMempelai.nama_orang_tua_wanita}
               </p>
-            </div>
-            <Link href={dataMempelai.instagram_wanita} target="_blank">
+            </motion.div>
+            <motion.a
+              variants={fadeIn}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              transition={{ duration: 3 }}
+              href={dataMempelai.instagram_wanita}
+              target="_blank"
+            >
               <FaInstagram
                 color="white"
                 size={28}
                 className="bg-primary p-1 rounded-full cursor-pointer"
               />
-            </Link>
+            </motion.a>
           </div>
           <div className="w-full h-full relative overflow-hidden">
             <Image

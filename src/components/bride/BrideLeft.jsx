@@ -1,10 +1,15 @@
 import Image from "next/image";
-import Link from "next/link";
 import React from "react";
-import { FaInstagram } from "react-icons/fa";
+import { motion } from "framer-motion";
+
+// font
 import { southernaire, nightStillComes, alice } from "@/utils/fonts";
+
+// assets
+import { FaInstagram } from "react-icons/fa";
 import bottom_right from "@/../public/images/flores/bottom_right.jpg";
 import kupuSmall from "@/../public/images/butterfly/kupu_small.gif";
+import { fadeIn } from "@/utils/animation";
 
 const BrideLeft = ({ dataMempelai }) => {
   return (
@@ -30,13 +35,21 @@ const BrideLeft = ({ dataMempelai }) => {
             {dataMempelai.nama_orang_tua_pria}
           </p>
         </div>
-        <Link href={dataMempelai.instagram_pria} target="_blank">
+        <motion.a
+          variants={fadeIn}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          transition={{ duration: 3 }}
+          href={dataMempelai.instagram_pria}
+          target="_blank"
+        >
           <FaInstagram
             color="white"
             size={28}
             className="bg-primary p-1 rounded-full cursor-pointer"
           />
-        </Link>
+        </motion.a>
       </div>
       <div className="w-full h-full relative overflow-hidden">
         <Image src={dataMempelai.foto_pria} alt="" width={1080} height={1080} />

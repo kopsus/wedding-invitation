@@ -1,9 +1,14 @@
 "use client";
 
-import { alice, southernaire } from "@/utils/fonts";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import { getgallery } from "@/api";
+import { motion } from "framer-motion";
+
+// font
+import { alice, southernaire } from "@/utils/fonts";
+import { fadeInUp, zoomIn } from "@/utils/animation";
+
 const Gallery = () => {
   const [data, setData] = useState([]);
 
@@ -18,28 +23,43 @@ const Gallery = () => {
 
   return (
     <div className="flex flex-col pt-14 pb-10 bg-[#ededea]">
-      <p
+      <motion.p
+        variants={fadeInUp}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
         className={`${southernaire.className} text-4xl text-center text-primary font-medium mb-10`}
       >
         Our Gallery
-      </p>
-      <p
+      </motion.p>
+      <motion.p
+        variants={fadeInUp}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
         className={`${alice.className} text-base font-medium w-1/2 mx-auto text-center leading-9`}
       >
         &quot;Loved you yesterday, love you still, always have, always
         will.&quot;
-      </p>
-      <div className="grid grid-cols-2 gap-3 px-5 mt-9">
+      </motion.p>
+      <motion.div className="grid grid-cols-2 gap-3 px-5 mt-9">
         {data.map((value, index) => (
-          <div
+          <motion.div
             key={index}
+            variants={fadeInUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
             className="relative overflow-hidden border-2 border-primary rounded-md sm:h-96 h-52 cursor-pointer group"
           >
             <Image src={value.image} alt="" layout="fill" objectFit="cover" />
             <div className="w-full h-full bg-black/50 absolute top-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </div>
   );
 };

@@ -3,6 +3,8 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { getLove, getRsvp } from "@/api";
+import { formatDistanceToNow } from "date-fns";
+import { id } from "date-fns/locale";
 
 // font
 import { alice, georgia, hathemBosteem, poppinsLight } from "@/utils/fonts";
@@ -95,7 +97,6 @@ const Rsvp = () => {
               <div className="flex items-center gap-2 mb-2">
                 <p className="text-sm font-bold text-primary">{value.nama}</p>
                 <div className="flex items-center gap-2">
-                  <p>icon</p>
                   {value.konfirmasi_kehadiran === "Hadir" ? (
                     <Image src={iconHadir} alt="" width={0} height={0} />
                   ) : value.konfirmasi_kehadiran === "Masih Ragu" ? (
@@ -108,7 +109,14 @@ const Rsvp = () => {
               <p className="text-sm">{value.ucapan}</p>
               <div className="flex items-center gap-1 text-[11px] text-primary mt-1">
                 <CiClock2 size={14} />
-                <p>Baru saja</p>
+                <p>
+                  {value.waktu_submit
+                    ? formatDistanceToNow(new Date(value.waktu_submit), {
+                        addSuffix: true,
+                        locale: id,
+                      })
+                    : "Waktu tidak tersedia"}
+                </p>
                 <p className="font-bold cursor-pointer">Replay</p>
               </div>
             </div>

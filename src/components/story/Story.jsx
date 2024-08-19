@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Accordian, { AccordianItem } from "./AccordionItem";
 import { getLove, getStory } from "@/api";
+import { motion } from "framer-motion";
 
 // fonts
 import { cormorant, poppinsMedium, southernaire } from "@/utils/fonts";
@@ -11,6 +12,7 @@ import { cormorant, poppinsMedium, southernaire } from "@/utils/fonts";
 import butterFly from "@/../public/images/butterfly/kupu_big.gif";
 import floreBottomRight from "@/../public/images/flores/bottom_right.jpg";
 import { useEffect, useState } from "react";
+import { fadeInUp } from "@/utils/animation";
 
 const Story = () => {
   const [dataStory, setDataStory] = useState([]);
@@ -57,12 +59,17 @@ const Story = () => {
           >
             Story
           </p>
-          <p
+          <motion.p
+            variants={fadeInUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
             className={`${poppinsMedium.className} text-base sm:px-24 text-center text-primary mb-5`}
           >
             &quot;Datangnya cinta adalah takdir, dia datang tak pernah
             terduga&quot;
-          </p>
+          </motion.p>
         </div>
         {dataStory.map((value, index) => (
           <Accordian key={index}>

@@ -17,7 +17,7 @@ const TimeBack = ({ dataMempelai }) => {
   useEffect(() => {
     const eventDate = new Date(dataMempelai.timeline);
     if (isNaN(eventDate.getTime())) {
-      console.error("Tanggal tidak valid:", dataMempelai.timeline);
+      console.error("Tanggal tidak valid:", dataMempelai?.timeline);
       return;
     }
 

@@ -2,9 +2,15 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import { motion } from "framer-motion";
+
+// fonts
 import { southernaire, quicksand, tms, poppinsMedium } from "@/utils/fonts";
-import imgBanner1 from "@/../public/images/banner/banner1.jpg";
+
+// assets
 import { RiMailOpenFill } from "react-icons/ri";
+import imgBanner1 from "@/../public/images/banner/banner1.jpg";
+import { fadeInUp } from "@/utils/animation";
 
 const Banner1 = ({ dataMempelai, params, scrollToContent }) => {
   const [showButton, setShowButton] = useState(true);
@@ -20,24 +26,44 @@ const Banner1 = ({ dataMempelai, params, scrollToContent }) => {
         <Image src={imgBanner1} alt="" width={0} height={0} />
       </div>
       <div className="absolute bottom-5 flex flex-col gap-5 items-center">
-        <p
+        <motion.p
+          variants={fadeInUp}
+          initial="initial"
+          animate="animate"
+          whileInView="whileInView"
+          transition={{ duration: 1 }}
           className={`${southernaire.className} text-primary text-[41px] font-light`}
         >
           {dataMempelai?.nama_panggilan_wanita} &{" "}
           {dataMempelai?.nama_panggilan_pria}
-        </p>
-        <p
+        </motion.p>
+        <motion.p
+          variants={fadeInUp}
+          initial="initial"
+          animate="animate"
+          whileInView="whileInView"
+          transition={{ duration: 1 }}
           className={`text-white text-[17px] font-medium ${quicksand.className}`}
         >
           Kepada Yth :
-        </p>
-        <p
+        </motion.p>
+        <motion.p
+          variants={fadeInUp}
+          initial="initial"
+          animate="animate"
+          whileInView="whileInView"
+          transition={{ duration: 1 }}
           className={`${tms.className} text-primary text-[26px] font-semibold`}
         >
           {params ? decodeURIComponent(params.slug) : "Nama Tamu"}
-        </p>
+        </motion.p>
         {showButton && (
-          <div
+          <motion.div
+            variants={fadeInUp}
+            initial="initial"
+            animate="animate"
+            whileInView="whileInView"
+            transition={{ duration: 1 }}
             onClick={handleClick}
             className="bg-primary py-2 px-5 rounded-md text-white flex items-center gap-2 cursor-pointer"
           >
@@ -45,13 +71,18 @@ const Banner1 = ({ dataMempelai, params, scrollToContent }) => {
             <p className={`${poppinsMedium.className} text-sm`}>
               Bukan Undangan
             </p>
-          </div>
+          </motion.div>
         )}
-        <p
+        <motion.p
+          variants={fadeInUp}
+          initial="initial"
+          animate="animate"
+          whileInView="whileInView"
+          transition={{ duration: 1 }}
           className={`capitalize text-center text-white text-sm ${quicksand.className}`}
         >
           *Mohon maaf apabila ada kesalahan penulisan nama/gelar
-        </p>
+        </motion.p>
       </div>
     </div>
   );

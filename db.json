@@ -66,34 +66,25 @@
   ],
   "rsvp": [
     {
-      "id": "6436",
-      "nama": "csa",
-      "ucapan": "asda",
-      "konfirmasi_kehadiran": "Masih Ragu"
+      "id": "f33e",
+      "nama": "test",
+      "ucapan": "asd",
+      "konfirmasi_kehadiran": "Hadir",
+      "waktu_submit": "2024-08-19T12:04:19.406Z"
     },
     {
-      "id": "a864",
-      "nama": "vbg",
-      "ucapan": "asdas",
-      "konfirmasi_kehadiran": "Tidak Hadir"
+      "id": "a65d",
+      "nama": "s",
+      "ucapan": "s",
+      "konfirmasi_kehadiran": "Tidak Hadir",
+      "waktu_submit": "2024-08-19T12:18:11.143Z"
     },
     {
-      "id": "b133",
-      "nama": "bg",
-      "ucapan": "as",
-      "konfirmasi_kehadiran": "Hadir"
-    },
-    {
-      "id": "d451",
-      "nama": "ba",
-      "ucapan": "csa",
-      "konfirmasi_kehadiran": "Masih Ragu"
-    },
-    {
-      "id": "1a00",
-      "nama": "asd",
-      "ucapan": "asdsa",
-      "konfirmasi_kehadiran": "Hadir"
+      "id": "3dff",
+      "nama": "cas",
+      "ucapan": "asd",
+      "konfirmasi_kehadiran": "Masih Ragu",
+      "waktu_submit": "2024-08-19T12:18:16.687Z"
     }
   ],
   "youtubeLink": [
@@ -128,6 +119,16 @@
       "image": "/images/person/person7.jpg"
     }
   ],
-  "footer": [{ "id": "1", "image": "/images/person/person2.jpg" }],
-  "audio": [{ "id": "1", "audio": "/audio/Indonesia-Raya.mp3" }]
+  "footer": [
+    {
+      "id": "1",
+      "image": "/images/person/person2.jpg"
+    }
+  ],
+  "audio": [
+    {
+      "id": "1",
+      "audio": "/audio/Indonesia-Raya.mp3"
+    }
+  ]
 }
