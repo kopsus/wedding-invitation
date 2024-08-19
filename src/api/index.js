@@ -30,3 +30,9 @@ export const creteRsvp = async (body) => {
 
   return res.data;
 };
+
+export const getYoutubeLink = async (body) => {
+  const res = await axios.get(`${baseURL}/youtubeLink`, body);
+
+  return res.data;
+};

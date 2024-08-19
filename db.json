@@ -83,5 +83,11 @@
       "ucapan": "asdsa",
       "konfirmasi_kehadiran": "Hadir"
     }
+  ],
+  "youtubeLink": [
+    {
+      "id": "1",
+      "link": "https://www.youtube.com/embed?v=-hzFTJDJGkQ&list=RDMoN9ql6Yymw&index=10"
+    }
   ]
 }

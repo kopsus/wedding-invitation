@@ -28,7 +28,7 @@ export default async function Page({ params }) {
       <Story />
       <PlatformOnline />
       <Rsvp />
-      <Gift />
+      <Gift params={params} />
       <Youtube />
       <Footer />
     </>
