@@ -1,6 +1,12 @@
 import { baseURL } from "@/constant/variables";
 import axios from "axios";
 
+export const getCover = async () => {
+  const res = await axios.get(`${baseURL}/cover`);
+
+  return res.data;
+};
+
 export const getMempelai = async () => {
   const res = await axios.get(`${baseURL}/mempelai`);
 

@@ -9,23 +9,32 @@ import { southernaire, quicksand, tms, poppinsMedium } from "@/utils/fonts";
 
 // assets
 import { RiMailOpenFill } from "react-icons/ri";
-import imgBanner1 from "@/../public/images/banner/banner1.jpg";
-import imgBanner2 from "@/../public/images/person/person2.jpg";
 import { fadeInUp, zoomIn } from "@/utils/animation";
+import { getCover } from "@/api";
 
 const Banner1 = ({ dataMempelai, params, scrollToContent }) => {
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
   const [showButton, setShowButton] = useState(true);
-  const images = [imgBanner1, imgBanner2];
-
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   useEffect(() => {
+    const fetchData = async () => {
+      const res = await getCover();
+      setData(res);
+      setLoading(false);
+    };
+
+    fetchData();
+  }, []);
+
+  useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 5000); // Ganti gambar setiap 5 detik
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % data.length);
+    }, 5000);
 
     return () => clearInterval(interval);
-  }, [images.length]);
+  }, [data.length]);
 
   const handleClick = () => {
     setShowButton(false);
@@ -34,23 +43,38 @@ const Banner1 = ({ dataMempelai, params, scrollToContent }) => {
 
   return (
     <div className="min-h-screen overflow-hidden flex justify-center items-center relative">
-      <div className="overflow-hidden h-screen w-full">
-        <motion.div
-          variants={zoomIn}
-          initial="hidden"
-          animate="visible"
-          transition={{ duration: 10, ease: "easeOut" }}
-          key={currentImageIndex}
-          className="relative w-full h-full"
-        >
-          <Image
-            src={images[currentImageIndex]}
-            alt=""
-            layout="fill"
-            objectFit="cover"
-            className="transition-transform duration-1000 ease-out"
-          />
-        </motion.div>
+      <div className="overflow-hidden h-screen w-full bg-white">
+        {loading ? (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, ease: "easeInOut" }}
+            className="flex justify-center items-center h-full"
+          >
+            <div className="flex flex-col items-center">
+              {/* Spinner or Loading Effect */}
+              <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-primary"></div>
+              <p className="text-primary mt-4">Loading...</p>
+            </div>
+          </motion.div>
+        ) : (
+          <motion.div
+            variants={zoomIn}
+            initial="hidden"
+            animate="visible"
+            transition={{ duration: 10, ease: "easeOut" }}
+            key={currentImageIndex}
+            className="relative w-full h-full"
+          >
+            <Image
+              src={data[currentImageIndex]}
+              alt=""
+              layout="fill"
+              objectFit="cover"
+              className="transition-transform duration-1000 ease-out"
+            />
+          </motion.div>
+        )}
       </div>
       <div className="absolute bottom-5 flex flex-col gap-5 items-center">
         <motion.p

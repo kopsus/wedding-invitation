@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply max-w-lg mx-auto bg-sky-500;
+    @apply max-w-lg mx-auto;
   }
 
   img {
