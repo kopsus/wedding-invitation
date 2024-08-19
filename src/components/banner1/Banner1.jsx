@@ -26,7 +26,7 @@ const Banner1 = ({ dataMempelai, params }) => {
         <p
           className={`${tms.className} text-primary text-[26px] font-semibold`}
         >
-          {decodeURIComponent(params.slug)}
+          {params ? decodeURIComponent(params.slug) : "Nama Tamu"}
         </p>
         <div className="bg-primary py-2 px-5 rounded-md text-white flex items-center gap-2 cursor-pointer">
           <RiMailOpenFill />

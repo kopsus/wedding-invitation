@@ -63,16 +63,20 @@ const Gift = ({ params }) => {
             </p>
           </div>
           {isOpen && (
-            <div className="border-2 border-primary">
-              <Canvas
-                text={decodeURIComponent(params.slug)}
-                options={{
-                  errorCorrectionLevel: "M",
-                  margin: 3,
-                  scale: 4,
-                  width: 200,
-                }}
-              />
+            <div
+              className={`${!params && "w-52 h-52"} border-2 border-primary`}
+            >
+              {params && (
+                <Canvas
+                  text={decodeURIComponent(params.slug)}
+                  options={{
+                    errorCorrectionLevel: "M",
+                    margin: 3,
+                    scale: 4,
+                    width: 200,
+                  }}
+                />
+              )}
             </div>
           )}
         </div>
