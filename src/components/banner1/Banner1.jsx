@@ -31,7 +31,7 @@ const Banner1 = ({ dataMempelai, params, scrollToContent }) => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImageIndex(
-        (prevIndex) => (prevIndex + 1) % data[0].image?.length
+        (prevIndex) => (prevIndex + 1) % data[0]?.image?.length,
       );
     }, 5000);
 
