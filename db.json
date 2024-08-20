@@ -15,7 +15,12 @@
       "foto_wanita": "/images/personal/rightBride.png"
     }
   ],
-  "cover": ["/images/person/person1.jpg", "/images/person/person2.jpg"],
+  "cover": [
+    {
+      "id": "1",
+      "image": ["/images/person/person1.jpg", "/images/person/person2.jpg"]
+    }
+  ],
   "banner2": [
     {
       "id": "1",

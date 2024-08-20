@@ -30,11 +30,13 @@ const Banner1 = ({ dataMempelai, params, scrollToContent }) => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % data.length);
+      setCurrentImageIndex(
+        (prevIndex) => (prevIndex + 1) % data[0].image?.length
+      );
     }, 5000);
 
     return () => clearInterval(interval);
-  }, [data.length]);
+  }, [data]);
 
   const handleClick = () => {
     setShowButton(false);
@@ -52,8 +54,7 @@ const Banner1 = ({ dataMempelai, params, scrollToContent }) => {
             className="flex justify-center items-center h-full"
           >
             <div className="flex flex-col items-center">
-              {/* Spinner or Loading Effect */}
-              <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-primary"></div>
+              <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-primary bg-black"></div>
               <p className="text-primary mt-4">Loading...</p>
             </div>
           </motion.div>
@@ -67,7 +68,7 @@ const Banner1 = ({ dataMempelai, params, scrollToContent }) => {
             className="relative w-full h-full"
           >
             <Image
-              src={data[currentImageIndex]}
+              src={data[0].image[currentImageIndex]}
               alt=""
               layout="fill"
               objectFit="cover"
