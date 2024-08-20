@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --yarl__container_background_color: rgba(0, 0, 0, 0.8);
+}
+
 @layer base {
   body {
     @apply max-w-lg mx-auto;
