@@ -18,7 +18,10 @@
   "cover": [
     {
       "id": "1",
-      "image": ["/images/person/person1.jpg", "/images/person/person2.jpg"]
+      "image": [
+        "/images/person/person1.jpg",
+        "/images/person/person2.jpg"
+      ]
     }
   ],
   "banner2": [
@@ -57,17 +60,20 @@
     {
       "judul": "Awal Bertemu",
       "tanggal": "15 April 2022",
-      "story": "Lorem ipsum dolor sit amet consectetur adipisicing elit.Blanditiis, aliquid modi officia perspiciatis sit molestiae corrupti placeat veritatis rem aliquam voluptas."
+      "story": "Lorem ipsum dolor sit amet consectetur adipisicing elit.Blanditiis, aliquid modi officia perspiciatis sit molestiae corrupti placeat veritatis rem aliquam voluptas.",
+      "id": "5c56"
     },
     {
       "judul": "Lamaran",
       "tanggal": "15 April 2022",
-      "story": "Lorem ipsum dolor sit amet consectetur adipisicing elit.Blanditiis, aliquid modi officia perspiciatis sit molestiae corrupti placeat veritatis rem aliquam voluptas."
+      "story": "Lorem ipsum dolor sit amet consectetur adipisicing elit.Blanditiis, aliquid modi officia perspiciatis sit molestiae corrupti placeat veritatis rem aliquam voluptas.",
+      "id": "fcba"
     },
     {
       "judul": "Resepsi",
       "tanggal": "15 April 2022",
-      "story": "Lorem ipsum dolor sit amet consectetur adipisicing elit.Blanditiis, aliquid modi officia perspiciatis sit molestiae corrupti placeat veritatis rem aliquam voluptas."
+      "story": "Lorem ipsum dolor sit amet consectetur adipisicing elit.Blanditiis, aliquid modi officia perspiciatis sit molestiae corrupti placeat veritatis rem aliquam voluptas.",
+      "id": "d255"
     }
   ],
   "rsvp": [
@@ -91,6 +97,36 @@
       "ucapan": "asd",
       "konfirmasi_kehadiran": "Masih Ragu",
       "waktu_submit": "2024-08-19T12:18:16.687Z"
+    },
+    {
+      "id": "6580",
+      "nama": "asdasd",
+      "ucapan": "asdasda",
+      "konfirmasi_kehadiran": "Hadir",
+      "waktu_submit": "2024-08-20T16:40:28.253Z"
+    },
+    {
+      "id": "b992",
+      "nama": "John Wick",
+      "ucapan": "Mawadah ya",
+      "konfirmasi_kehadiran": "Hadir",
+      "waktu_submit": "2024-08-20T16:40:55.588Z"
+    },
+    {
+      "id": "11c1",
+      "nama": "Masum",
+      "ucapan": "makasih john",
+      "konfirmasi_kehadiran": "Hadir",
+      "waktu_submit": "2024-08-20T17:06:32.480Z",
+      "balasan": "b992"
+    },
+    {
+      "id": "5b9a",
+      "nama": "okeei",
+      "ucapan": "wokee",
+      "konfirmasi_kehadiran": "Hadir",
+      "waktu_submit": "2024-08-20T17:22:33.843Z",
+      "balasan": "b992"
     }
   ],
   "youtubeLink": [

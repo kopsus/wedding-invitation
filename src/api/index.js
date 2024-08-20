@@ -40,6 +40,21 @@ export const getStory = async () => {
 export const getRsvp = async () => {
   const res = await axios.get(`${baseURL}/rsvp`);
 
+  if (res?.data?.length > 0) {
+    res.data = res?.data?.map((d) => {
+      const replies = res?.data?.filter((e) => e?.balasan === d.id);
+
+      return {
+        ...d,
+        replies,
+      };
+    });
+
+    res.data = res?.data?.filter((d) => !d?.balasan);
+  }
+
+  console.log("res.data ==>", res.data);
+
   return res.data;
 };
 
