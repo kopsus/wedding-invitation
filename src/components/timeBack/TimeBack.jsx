@@ -3,8 +3,8 @@
 import Image from "next/image";
 import React, { useState, useEffect } from "react";
 import { alice, euphorig, readex_pro } from "@/utils/fonts";
-import Lamp from "@/../public/images/lamp/lamp.png";
-import centerFlores from "@/../public/images/flores/center.jpg";
+// import Lamp from "@/../public/images/lamp/lamp.png";
+// import centerFlores from "@/../public/images/flores/center.jpg";
 
 const TimeBack = ({ dataMempelai }) => {
   const [countdown, setCountdown] = useState({
@@ -32,7 +32,7 @@ const TimeBack = ({ dataMempelai }) => {
 
       const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
       const hours = Math.floor(
-        (timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        (timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
       );
       const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
       const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
@@ -50,10 +50,20 @@ const TimeBack = ({ dataMempelai }) => {
   return (
     <div className="h-[65vh]">
       <div className="relative top-0 w-full h-full">
-        <Image src={centerFlores} alt="" layout="fill" objectFit="cover" />
+        <Image
+          src="/images/flores/center.jpg"
+          alt=""
+          layout="fill"
+          objectFit="cover"
+        />
         <div className="bg-primary w-full h-full absolute top-0 bg-opacity-80 text-white flex flex-col justify-around px-3">
           <div className="w-32 mx-auto">
-            <Image src={Lamp} alt="lamp" />
+            <Image
+              src="/images/lamp/Lamp.png"
+              width={250}
+              height={250}
+              alt="lamp"
+            />
           </div>
           <p
             className={`${alice.className} text-center text-[15px] font-medium`}
