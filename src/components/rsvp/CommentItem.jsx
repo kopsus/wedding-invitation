@@ -44,20 +44,27 @@ export const CommentItem = ({ value, isReply, onClickReply }) => {
                 })
               : "Waktu tidak tersedia"}
           </p>
-          {!isReply && (
-            <p
-              className="font-bold cursor-pointer"
-              onClick={() => onClickReply(value)}
-            >
-              Reply
-            </p>
-          )}
+          {/* {!isReply && ( */}
+          <p
+            className="font-bold cursor-pointer"
+            onClick={() => onClickReply(value)}
+          >
+            Reply
+          </p>
+          {/* )} */}
         </div>
       </div>
       {value?.replies && value?.replies?.length > 0 ? (
         <div className="ml-6">
           {value?.replies?.map((reply, j) => {
-            return <CommentItem value={reply} isReply key={j} />;
+            return (
+              <CommentItem
+                value={reply}
+                onClickReply={onClickReply}
+                isReply
+                key={j}
+              />
+            );
           })}
         </div>
       ) : null}

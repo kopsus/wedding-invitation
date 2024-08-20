@@ -35,7 +35,7 @@ const FormAddRsvp = React.forwardRef(({ onRsvpAdded }, ref) => {
         ucapan: e.target.ucapan.value,
         konfirmasi_kehadiran: selectedKehadiran,
         waktu_submit: new Date().toISOString(),
-        balasan: reply?.id,
+        balasan: reply?.balasan || reply?.id,
       });
 
       if (onRsvpAdded) {
