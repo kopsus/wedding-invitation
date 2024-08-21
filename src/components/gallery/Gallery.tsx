@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 
 // font
 import { alice, southernaire } from "../../utils/fonts";
-import { fadeInUp, zoomIn } from "../../utils/animation";
+import { fadeInUp } from "../../utils/animation";
 import { NextLightbox } from "../lightbox/Lightbox";
 import { useLightbox } from "../lightbox/useLightbox";
 
@@ -24,6 +24,15 @@ const Gallery = () => {
 
     fetchData();
   }, []);
+
+  const zoomIn = {
+    hidden: {
+      scale: 0,
+    },
+    visible: {
+      scale: 1,
+    },
+  };
 
   return (
     <>
@@ -66,7 +75,21 @@ const Gallery = () => {
               }
               className="relative overflow-hidden border-2 border-primary rounded-md sm:h-96 h-52 cursor-pointer group"
             >
-              <Image src={value.image} alt="" layout="fill" objectFit="cover" />
+              <motion.div
+                className="w-full h-full"
+                variants={zoomIn}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+              >
+                <Image
+                  src={value.image}
+                  alt=""
+                  layout="fill"
+                  objectFit="cover"
+                />
+              </motion.div>{" "}
               <div className="w-full h-full bg-black/50 absolute top-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             </motion.div>
           ))}
