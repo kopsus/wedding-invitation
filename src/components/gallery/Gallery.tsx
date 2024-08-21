@@ -2,12 +2,12 @@
 
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
-import { getgallery } from "@/api";
+import { getgallery } from "../../api/index";
 import { motion } from "framer-motion";
 
 // font
-import { alice, southernaire } from "@/utils/fonts";
-import { fadeInUp, zoomIn } from "@/utils/animation";
+import { alice, southernaire } from "../../utils/fonts";
+import { fadeInUp, zoomIn } from "../../utils/animation";
 import { NextLightbox } from "../lightbox/Lightbox";
 import { useLightbox } from "../lightbox/useLightbox";
 
@@ -61,7 +61,7 @@ const Gallery = () => {
               onClick={() =>
                 lightbox.open(
                   index,
-                  data?.map((d) => d?.image),
+                  data?.map((d) => d?.image)
                 )
               }
               className="relative overflow-hidden border-2 border-primary rounded-md sm:h-96 h-52 cursor-pointer group"

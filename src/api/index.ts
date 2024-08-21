@@ -1,5 +1,6 @@
-import { baseURL } from "@/constant/variables";
 import axios from "axios";
+import { baseURL } from "../constant/variables";
+import { typeRsvp } from "./types";
 
 export const getCover = async () => {
   const res = await axios.get(`${baseURL}/cover`);
@@ -56,7 +57,7 @@ export const getRsvp = async () => {
   return res.data;
 };
 
-export const creteRsvp = async (body) => {
+export const creteRsvp = async (body: typeRsvp) => {
   const res = await axios.post(`${baseURL}/rsvp`, body);
 
   return res.data;

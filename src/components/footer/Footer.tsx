@@ -4,8 +4,8 @@ import Image from "next/image";
 import React, { useEffect, useState } from "react";
 
 // assets
-import imgMerak from "@/../public/images/merak/merak-footer.png";
-import butterFly from "@/../public/images/butterfly/kupu_small.gif";
+import imgMerak from "../../../public/images/merak/merak-footer.png";
+import butterFly from "../../../public/images/butterfly/kupu_small.gif";
 import { IoMdBasketball } from "react-icons/io";
 import { FaInstagram, FaWhatsapp } from "react-icons/fa";
 
@@ -15,8 +15,8 @@ import {
   nightStillComes,
   poppinsSemiBold,
   southernaire,
-} from "@/utils/fonts";
-import { getFooter } from "@/api";
+} from "../../utils/fonts";
+import { getFooter } from "../../api/index";
 
 const Footer = () => {
   const [data, setData] = useState([]);

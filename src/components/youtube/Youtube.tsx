@@ -1,6 +1,6 @@
 "use client";
 
-import { getYoutubeLink } from "@/api";
+import { getYoutubeLink } from "../../api";
 import React, { useEffect, useState } from "react";
 
 const Youtube = () => {

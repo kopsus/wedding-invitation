@@ -1,20 +1,20 @@
 "use client";
 
-import { getAudio, getMempelai } from "@/api";
+import { getAudio, getMempelai } from "../../api/index";
 import { useEffect, useRef, useState } from "react";
-import Banner1 from "@/components/banner1/Banner1";
-import Banner2 from "@/components/banner2/Banner2";
-import BrideLeft from "@/components/bride/BrideLeft";
-import BrideRight from "@/components/bride/BrideRight";
-import Footer from "@/components/footer/Footer";
-import Gallery from "@/components/gallery/Gallery";
-import Gift from "@/components/gift/Gift";
-import PlatformOnline from "@/components/platformOnline/PlatformOnline";
-import Rsvp from "@/components/rsvp/Rsvp";
-import Story from "@/components/story/Story";
-import TimeBack from "@/components/timeBack/TimeBack";
-import { TimeLine } from "@/components/timeline/TimeLine";
-import Youtube from "@/components/youtube/Youtube";
+import Banner1 from "../../components/banner1/Banner1";
+import Banner2 from "../../components/banner2/Banner2";
+import BrideLeft from "../../components/bride/BrideLeft";
+import BrideRight from "../../components/bride/BrideRight";
+import Footer from "../../components/footer/Footer";
+import Gallery from "../../components/gallery/Gallery";
+import Gift from "../../components/gift/Gift";
+import PlatformOnline from "../../components/platformOnline/PlatformOnline";
+import Rsvp from "../../components/rsvp/Rsvp";
+import Story from "../../components/story/Story";
+import TimeBack from "../../components/timeBack/TimeBack";
+import { TimeLine } from "../../components/timeline/TimeLine";
+import Youtube from "../../components/youtube/Youtube";
 import { FaPause, FaPlay } from "react-icons/fa";
 
 export default function Home({ params }) {

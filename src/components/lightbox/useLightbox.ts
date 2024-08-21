@@ -28,8 +28,6 @@ export const useLightbox = () => {
       })),
   }));
 
-  console.log("slides =>", slides);
-
   const open = (index = 0, imgs = []) => {
     setVisible(true);
     setIndex(index);

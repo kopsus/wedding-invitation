@@ -1,17 +1,16 @@
 "use client";
 
-import { alice, nightStillComes } from "@/utils/fonts";
+import { alice, nightStillComes } from "../../utils/fonts";
 import { createContext, useContext, useRef, useEffect, useState } from "react";
 import { MdArrowRight } from "react-icons/md";
 
-const AccordianContext = createContext();
+const AccordianContext = createContext({
+  selected: null,
+  setSelected: (p0: any) => {},
+});
 
-export default function Accordian({ children, value, onChange, ...props }) {
-  const [selected, setSelected] = useState(value);
-
-  useEffect(() => {
-    onChange?.(selected);
-  }, [onChange, selected]);
+export const Accordian = ({ children, value, ...props }) => {
+  const [selected, setSelected] = useState(null);
 
   return (
     <ul {...props}>
@@ -20,7 +19,7 @@ export default function Accordian({ children, value, onChange, ...props }) {
       </AccordianContext.Provider>
     </ul>
   );
-}
+};
 
 export function AccordianItem({ children, value, trigger, ...props }) {
   const { selected, setSelected } = useContext(AccordianContext);

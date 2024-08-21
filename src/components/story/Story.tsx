@@ -1,18 +1,18 @@
 "use client";
 
 import Image from "next/image";
-import Accordian, { AccordianItem } from "./AccordionItem";
-import { getLove, getStory } from "@/api";
+import { AccordianItem, Accordian } from "./AccordionItem";
+import { getLove, getStory } from "../../api";
 import { motion } from "framer-motion";
 
 // fonts
-import { cormorant, poppinsMedium, southernaire } from "@/utils/fonts";
+import { cormorant, poppinsMedium, southernaire } from "../../utils/fonts";
 
 // assets
 import butterFly from "@/../public/images/butterfly/kupu_big.gif";
 import floreBottomRight from "@/../public/images/flores/bottom_right.jpg";
 import { useEffect, useState } from "react";
-import { fadeInUp } from "@/utils/animation";
+import { fadeInUp } from "../../utils/animation";
 
 const Story = () => {
   const [dataStory, setDataStory] = useState([]);
@@ -72,7 +72,7 @@ const Story = () => {
           </motion.p>
         </div>
         {dataStory.map((value, index) => (
-          <Accordian key={index}>
+          <Accordian key={index} value={value.judul}>
             <AccordianItem value={value.judul} trigger={value.judul}>
               <p className="mb-5">{value.tanggal}</p>
               <p>{value.story}</p>

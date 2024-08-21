@@ -2,9 +2,9 @@
 
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
-import { nightStillComes, southernaire } from "@/utils/fonts";
-import { formatDate } from "@/utils/format";
-import { getBanner2 } from "@/api";
+import { nightStillComes, southernaire } from "../../utils/fonts";
+import { formatDate } from "../../utils/format";
+import { getBanner2 } from "../../api/index";
 
 const Banner2 = ({ dataMempelai }) => {
   const [data, setData] = useState(null);

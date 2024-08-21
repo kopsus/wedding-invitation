@@ -1,20 +1,13 @@
 "use client";
 
 import React, { useEffect, useState, useRef } from "react";
-import Image from "next/image";
-import { getLove, getRsvp } from "@/api";
-import { formatDistanceToNow } from "date-fns";
-import { id } from "date-fns/locale";
+import { getLove, getRsvp } from "../../api";
 
 // font
-import { alice, georgia, hathemBosteem, poppinsLight } from "@/utils/fonts";
+import { alice, georgia, hathemBosteem, poppinsLight } from "../../utils/fonts";
 
 // assets
-import { CiClock2 } from "react-icons/ci";
 import imageGallery3 from "@/../public/images/person/person1.jpg";
-import iconHadir from "@/../public/icon/icon_hadir.svg";
-import iconRagu from "@/../public/icon/icon_ragu.svg";
-import { MdCancel } from "react-icons/md";
 import FormAddRsvp from "./FormAddRsvp";
 import { CommentItem } from "./CommentItem";
 

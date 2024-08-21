@@ -3,7 +3,7 @@ import React from "react";
 import { motion } from "framer-motion";
 
 // fonts
-import { alice, quicksand, southernaire } from "@/utils/fonts";
+import { alice, quicksand, southernaire } from "../../utils/fonts";
 
 // assets
 import { FaInstagram } from "react-icons/fa";
@@ -11,7 +11,7 @@ import { BsMagic } from "react-icons/bs";
 import floreLeftSide from "@/../public/images/flores/left_side.png";
 import floreRighttSide from "@/../public/images/flores/right_side.png";
 import butterFly from "@/../public/images/butterfly/kupu_big.gif";
-import { fadeInUp } from "@/utils/animation";
+import { fadeInUp } from "../../utils/animation";
 
 const PlatformOnline = () => {
   return (

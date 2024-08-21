@@ -13,9 +13,9 @@ import {
   poppinsMedium,
   poppinsSemiBold,
   southernaire,
-} from "@/utils/fonts";
+} from "../../utils/fonts";
 import Link from "next/link";
-import { getProgram } from "@/api";
+import { getProgram } from "../../api";
 
 export const TimeLine = () => {
   const [data, setData] = useState([]);

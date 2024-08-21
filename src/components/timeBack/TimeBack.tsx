@@ -2,9 +2,7 @@
 
 import Image from "next/image";
 import React, { useState, useEffect } from "react";
-import { alice, euphorig, readex_pro } from "@/utils/fonts";
-// import Lamp from "@/../public/images/lamp/lamp.png";
-// import centerFlores from "@/../public/images/flores/center.jpg";
+import { alice, euphorig, readex_pro } from "../../utils/fonts";
 
 const TimeBack = ({ dataMempelai }) => {
   const [countdown, setCountdown] = useState({
@@ -23,7 +21,7 @@ const TimeBack = ({ dataMempelai }) => {
 
     const updateCountdown = () => {
       const now = new Date();
-      const timeDiff = eventDate - now;
+      const timeDiff = eventDate.getTime() - now.getTime();
 
       if (timeDiff <= 0) {
         setCountdown({ days: 0, hours: 0, minutes: 0, seconds: 0 });
@@ -32,7 +30,7 @@ const TimeBack = ({ dataMempelai }) => {
 
       const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
       const hours = Math.floor(
-        (timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
+        (timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
       );
       const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
       const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);

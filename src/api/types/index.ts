@@ -45,12 +45,13 @@ export type typeStory = {
   story: string;
 };
 
-export type typeWaktuSubmit = {
-  id: string;
+export type typeRsvp = {
+  id?: string;
   nama: string;
   ucapan: string;
   konfirmasi_kehadiran: string;
   waktu_submit: string;
+  balasan?: string;
 };
 
 export type typeYtLink = {

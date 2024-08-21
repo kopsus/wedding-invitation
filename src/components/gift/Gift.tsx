@@ -4,7 +4,12 @@ import React, { useState } from "react";
 import Image from "next/image";
 
 // font
-import { alice, poppinsMedium, quicksand, southernaire } from "@/utils/fonts";
+import {
+  alice,
+  poppinsMedium,
+  quicksand,
+  southernaire,
+} from "../../utils/fonts";
 
 // assets
 import { FaGift } from "react-icons/fa";

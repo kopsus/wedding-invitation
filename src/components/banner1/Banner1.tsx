@@ -5,12 +5,12 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 // fonts
-import { southernaire, quicksand, tms, poppinsMedium } from "@/utils/fonts";
+import { southernaire, quicksand, tms, poppinsMedium } from "../../utils/fonts";
 
 // assets
 import { RiMailOpenFill } from "react-icons/ri";
-import { fadeInUp, zoomIn } from "@/utils/animation";
-import { getCover } from "@/api";
+import { fadeInUp, zoomIn } from "../../utils/animation";
+import { getCover } from "../../api/index";
 
 const Banner1 = ({ dataMempelai, params, scrollToContent }) => {
   const [data, setData] = useState([]);
@@ -31,7 +31,7 @@ const Banner1 = ({ dataMempelai, params, scrollToContent }) => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImageIndex(
-        (prevIndex) => (prevIndex + 1) % data[0]?.image?.length,
+        (prevIndex) => (prevIndex + 1) % data[0]?.image?.length
       );
     }, 5000);
 
