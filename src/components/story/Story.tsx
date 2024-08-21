@@ -36,7 +36,7 @@ const Story = () => {
         backgroundImage: `url(${floreBottomRight.src})`,
       }}
     >
-      <div className="border-2 border-primary">
+      <div className="border-2 pb-3 border-primary">
         {dataLove.map((value, index) => (
           <div
             key={index}

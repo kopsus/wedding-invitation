@@ -17,6 +17,7 @@ const Banner1 = ({ dataMempelai, params, scrollToContent }) => {
   const [loading, setLoading] = useState(true);
   const [showButton, setShowButton] = useState(true);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const slug = params?.slug ? decodeURIComponent(params.slug) : "Nama Tamu";
 
   useEffect(() => {
     const fetchData = async () => {
@@ -107,7 +108,7 @@ const Banner1 = ({ dataMempelai, params, scrollToContent }) => {
           transition={{ duration: 1 }}
           className={`${tms.className} text-primary text-[26px] font-semibold`}
         >
-          {params ? decodeURIComponent(params.slug) : "Nama Tamu"}
+          {slug}
         </motion.p>
         {showButton && (
           <motion.div

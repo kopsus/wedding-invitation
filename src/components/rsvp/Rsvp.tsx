@@ -63,7 +63,7 @@ const Rsvp = () => {
         </p>
       </div>
       <div className="bg-[#eeeeeb] w-[90%] mx-auto rounded-lg">
-        <div className="pt-3 border-b border-slate-200">
+        <div className="pt-3  border-b border-slate-200">
           <p className="text-center text-primary font-medium">Comment</p>
           <div className="grid grid-cols-3 mx-auto gap-5 w-[80%] text-[#b096a4]">
             <div className="text-center border border-[#b096a4] p-2 rounded-md my-5">
