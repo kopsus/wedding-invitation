@@ -13,12 +13,13 @@ import { CommentItem } from "./CommentItem";
 
 const Rsvp = () => {
   const formRef = useRef(null);
-  const [dataKehadiran, setDataKehadiran] = useState([]);
   const [dataLove, setDataLove] = useState([]);
+  const [dataKehadiran, setDataKehadiran] = useState([]);
 
   const fetchRsvpData = async () => {
     try {
       const data = await getRsvp();
+
       setDataKehadiran(data);
     } catch (error) {
       console.error("Gagal mendapatkan data RSVP", error);

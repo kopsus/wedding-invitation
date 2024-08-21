@@ -52,6 +52,10 @@ export const getRsvp = async () => {
     });
 
     res.data = res?.data?.filter((d) => !d?.balasan);
+    res.data.sort(
+      (a, b) =>
+        new Date(b.waktu_submit).getTime() - new Date(a.waktu_submit).getTime()
+    );
   }
 
   return res.data;
