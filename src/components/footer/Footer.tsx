@@ -17,6 +17,7 @@ import {
   southernaire,
 } from "../../utils/fonts";
 import { getFooter } from "../../api/index";
+import Link from "next/link";
 
 const Footer = () => {
   const [data, setData] = useState([]);
@@ -81,9 +82,18 @@ const Footer = () => {
           Design By Website Invitation
         </p>
         <div className="flex justify-center gap-5">
-          <FaWhatsapp size={32} className="bg-slate-100 rounded-full p-1" />
-          <IoMdBasketball size={32} className="bg-slate-100 rounded-full p-1" />
-          <FaInstagram size={32} className="bg-slate-100 rounded-full p-1" />
+          <Link href={"https://web.whatsapp.com/"} target="_blank">
+            <FaWhatsapp size={32} className="bg-slate-100 rounded-full p-1" />
+          </Link>
+          <Link href={"https://abc.com"} target="_blank">
+            <IoMdBasketball
+              size={32}
+              className="bg-slate-100 rounded-full p-1"
+            />
+          </Link>
+          <Link href={"https://instagram.com"} target="_blank">
+            <FaInstagram size={32} className="bg-slate-100 rounded-full p-1" />
+          </Link>
         </div>
       </div>
     </div>
