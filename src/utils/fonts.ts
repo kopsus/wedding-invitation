@@ -5,6 +5,7 @@ import {
   Readex_Pro,
   Poppins,
   Cormorant,
+  Raleway,
 } from "next/font/google";
 
 export const quicksand = Quicksand({
@@ -39,6 +40,11 @@ export const poppinsSemiBold = Poppins({
 export const cormorant = Cormorant({
   subsets: ["latin"],
   weight: "500",
+});
+
+export const raleway = Raleway({
+  subsets: ["latin"],
+  weight: "600",
 });
 
 export const southernaire = localFont({

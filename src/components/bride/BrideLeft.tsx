@@ -7,8 +7,8 @@ import { southernaire, nightStillComes, alice } from "../../utils/fonts";
 
 // assets
 import { FaInstagram } from "react-icons/fa";
-import bottom_right from "@/../public/images/flores/bottom_right.jpg";
-import kupuSmall from "@/../public/images/butterfly/kupu_small.gif";
+import bottom_right from "../../../public/images/flores/bottom_right.jpg";
+import kupuSmall from "../../../public/images/butterfly/kupu_small.gif";
 import { fadeIn } from "../../utils/animation";
 
 const BrideLeft = ({ dataMempelai }) => {

@@ -4,9 +4,9 @@ import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import { FaClock } from "react-icons/fa";
 import { IoLocationSharp } from "react-icons/io5";
-import centerFlores from "@/../public/images/flores/center.jpg";
-import bgCard from "@/../public/images/flores/left_side.png";
-import merakPutih from "@/../public/images/merak/Merak-Putih.png";
+import centerFlores from "../../../public/images/flores/center.jpg";
+import bgCard from "../../../public/images/flores/left_side.png";
+import merakPutih from "../../../public/images/merak/Merak-Putih.png";
 import {
   alice,
   poppinsLight,

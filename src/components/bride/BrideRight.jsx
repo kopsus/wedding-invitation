@@ -2,14 +2,14 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 
 // font
-import { southernaire, nightStillComes, alice } from "@/utils/fonts";
+import { southernaire, nightStillComes, alice } from "../../utils/fonts";
 
 // assets
 import { FaInstagram } from "react-icons/fa";
-import floreTopLeft from "@/../public/images/flores/top_left.jpg";
-import kupuSmall from "@/../public/images/butterfly/kupu_small.gif";
-import imageDan from "@/../public/images/image_&.png";
-import { fadeIn, fadeInUp } from "@/utils/animation";
+import floreTopLeft from "../../../public/images/flores/top_left.jpg";
+import kupuSmall from "../../../public/images/butterfly/kupu_small.gif";
+import imageDan from "../../../public/images/image_&.png";
+import { fadeIn, fadeInUp } from "../../utils/animation";
 
 const BrideRight = ({ dataMempelai }) => {
   return (

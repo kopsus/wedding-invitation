@@ -9,8 +9,8 @@ import { motion } from "framer-motion";
 import { cormorant, poppinsMedium, southernaire } from "../../utils/fonts";
 
 // assets
-import butterFly from "@/../public/images/butterfly/kupu_big.gif";
-import floreBottomRight from "@/../public/images/flores/bottom_right.jpg";
+import butterFly from "../../../public/images/butterfly/kupu_big.gif";
+import floreBottomRight from "../../../public/images/flores/bottom_right.jpg";
 import { useEffect, useState } from "react";
 import { fadeInUp } from "../../utils/animation";
 
