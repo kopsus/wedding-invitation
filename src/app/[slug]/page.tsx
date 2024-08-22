@@ -11,6 +11,23 @@ import {
   getStory,
   getYoutubeLink,
 } from "@/api/index";
+import { Metadata } from "next";
+
+export async function generateMetadata(): Promise<Metadata> {
+  const dataMempelai = await getMempelai();
+  const dataCover = await getCover();
+
+  return {
+    title: `${dataMempelai[0].nama_panggilan_pria} & ${dataMempelai[0].nama_panggilan_wanita}`,
+    description: `Undangan pernikahan ${dataMempelai[0].nama_panggilan_pria} & ${dataMempelai[0].nama_panggilan_wanita}. Kami mengundang Anda untuk hadir dan memberikan doa restu.`,
+    robots: "noindex, nofollow",
+    openGraph: {
+      title: `Pernikahan ${dataMempelai[0].nama_lengkap_pria} & ${dataMempelai[0].nama_lengkap_Wanita}`,
+      description: `Undangan pernikahan ${dataMempelai[0].nama_panggilan_pria} & ${dataMempelai[0].nama_panggilan_wanita}. Kami mengundang Anda untuk hadir dan memberikan doa restu.`,
+      images: [dataCover[0].image[0]],
+    },
+  };
+}
 
 export default async function Home({ params }) {
   const dataCover = await getCover();
