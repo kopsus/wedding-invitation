@@ -1,13 +1,13 @@
 "use client";
 
 import React, { useEffect, useState, useRef } from "react";
-import { getLove, getRsvp } from "../../api";
+import { getLove, getRsvp } from "@/api";
 
 // font
-import { alice, georgia, hathemBosteem, poppinsLight } from "../../utils/fonts";
+import { alice, georgia, hathemBosteem, poppinsLight } from "@/utils/fonts";
 
 // assets
-import imageGallery3 from "../../../public/images/person/person1.jpg";
+import imageGallery3 from "@/../public/images/person/person1.jpg";
 import FormAddRsvp from "./FormAddRsvp";
 import { CommentItem } from "./CommentItem";
 

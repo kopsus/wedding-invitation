@@ -1,15 +1,10 @@
 import Image from "next/image";
 import React from "react";
-import { motion } from "framer-motion";
-
-// font
-import { southernaire, nightStillComes, alice } from "../../utils/fonts";
 
 // assets
-import { FaInstagram } from "react-icons/fa";
-import bottom_right from "../../../public/images/flores/bottom_right.jpg";
-import kupuSmall from "../../../public/images/butterfly/kupu_small.gif";
-import { fadeIn } from "../../utils/animation";
+import bottom_right from "@/../public/images/flores/bottom_right.jpg";
+import kupuSmall from "@/../public/images/butterfly/kupu_small.gif";
+import { BrideProfilePria } from "./BrideProfile";
 
 const BrideLeft = ({ dataMempelai }) => {
   return (
@@ -18,38 +13,7 @@ const BrideLeft = ({ dataMempelai }) => {
       style={{ backgroundImage: `url(${bottom_right.src})` }}
     >
       <div className="px-7 pt-5 flex flex-col items-end">
-        <p
-          className={`${southernaire.className} text-primary text-6xl font-medium`}
-        >
-          {dataMempelai.nama_panggilan_pria}
-        </p>
-        <div className="mt-3 mb-5 flex flex-col items-end">
-          <p
-            className={`text-[35px] font-medium text-(rgba(41,41,41)) ${nightStillComes.className}`}
-          >
-            {dataMempelai.nama_lengkap_pria}
-          </p>
-          <p
-            className={`${alice.className} text-gray-500 text-[17px] text-end font-medium w-[65%]`}
-          >
-            {dataMempelai.nama_orang_tua_pria}
-          </p>
-        </div>
-        <motion.a
-          variants={fadeIn}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          transition={{ duration: 3 }}
-          href={dataMempelai.instagram_pria}
-          target="_blank"
-        >
-          <FaInstagram
-            color="white"
-            size={28}
-            className="bg-primary p-1 rounded-full cursor-pointer"
-          />
-        </motion.a>
+        <BrideProfilePria dataMempelai={dataMempelai} />
       </div>
       <div className="w-full h-full relative overflow-hidden">
         <Image src={dataMempelai.foto_pria} alt="" width={1080} height={1080} />

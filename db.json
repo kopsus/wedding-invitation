@@ -18,10 +18,7 @@
   "cover": [
     {
       "id": "1",
-      "image": [
-        "/images/person/person1.jpg",
-        "/images/person/person2.jpg"
-      ]
+      "image": ["/images/person/person1.jpg", "/images/person/person2.jpg"]
     }
   ],
   "banner2": [
@@ -210,6 +207,20 @@
     {
       "id": "1",
       "audio": "/audio/Indonesia-Raya.mp3"
+    }
+  ],
+  "giftCard": [
+    {
+      "id": "1",
+      "name": "Asmara Digital",
+      "number": "123456789",
+      "logo": "/images/brand/Logo-BSI.png"
+    },
+    {
+      "id": "2",
+      "name": "Asmara Digital",
+      "number": "987654321",
+      "logo": "/images/brand/Logo-Mandiri.png"
     }
   ]
 }

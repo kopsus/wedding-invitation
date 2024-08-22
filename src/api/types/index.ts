@@ -73,3 +73,10 @@ export type typeAudio = {
   id: string;
   image: string;
 };
+
+export type typeGiftCard = {
+  id: string;
+  name: string;
+  number: string;
+  logo: string;
+};

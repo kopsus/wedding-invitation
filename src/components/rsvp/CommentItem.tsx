@@ -6,8 +6,8 @@ import { id } from "date-fns/locale";
 
 // assets
 import { CiClock2 } from "react-icons/ci";
-import iconHadir from "../../../public/icon/icon_hadir.svg";
-import iconRagu from "../../../public/icon/icon_ragu.svg";
+import iconHadir from "@/../public/icon/icon_hadir.svg";
+import iconRagu from "@/../public/icon/icon_ragu.svg";
 import { MdCancel } from "react-icons/md";
 
 export const CommentItem = ({ value, onClickReply }) => {

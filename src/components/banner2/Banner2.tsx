@@ -1,31 +1,11 @@
-"use client";
-
 import Image from "next/image";
-import React, { useEffect, useState } from "react";
-import { nightStillComes, southernaire } from "../../utils/fonts";
-import { formatDate } from "../../utils/format";
-import { getBanner2 } from "../../api/index";
+import { nightStillComes, southernaire } from "@/utils/fonts";
+import { formatDate } from "@/utils/format";
 
-const Banner2 = ({ dataMempelai }) => {
-  const [data, setData] = useState(null);
-
-  // Fetch data on mount
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const fetchedData = await getBanner2();
-        setData(fetchedData);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
-
-    fetchData();
-  }, []);
-
+const Banner2 = ({ dataMempelai, dataBanner2 }) => {
   return (
     <div className="max-h-screen overflow-hidden flex justify-center items-center relative">
-      {data?.map((value, index) => (
+      {dataBanner2.map((value, index) => (
         <Image
           key={index}
           src={value.image}

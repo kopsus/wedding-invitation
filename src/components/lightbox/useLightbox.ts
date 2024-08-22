@@ -16,12 +16,10 @@ export const useLightbox = () => {
     width: 1280,
     height: 1280,
     src,
-    // src: nextImageUrl(src, width),
     srcSet: imageSizes
       .concat(...deviceSizes)
       .filter((size) => size <= 1280)
       .map((size) => ({
-        // src: nextImageUrl(src, size),
         src,
         width: size,
         height: Math.round((1280 / 1280) * size),

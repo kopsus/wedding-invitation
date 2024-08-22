@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 
 // fonts
-import { poppinsMedium, raleway } from "../../utils/fonts";
+import { poppinsMedium, raleway } from "@/utils/fonts";
 
 // assets
-import logoBSI from "../../../public/images/brand/Logo-BSI.png";
-import logoMandiri from "../../../public/images/brand/Logo-Mandiri.png";
 import Image from "next/image";
 import { IoMdCopy } from "react-icons/io";
 
-export const GfitCard = () => {
+export const GfitCard = ({ dataGiftCard }) => {
+  console.log("data gift card", dataGiftCard);
+
   const [copiedId, setCopiedId] = useState(null);
 
   const handleCopyNumber = (id, number) => {
@@ -19,13 +19,9 @@ export const GfitCard = () => {
     });
   };
 
-  const accounts = [
-    { id: 1, name: "Asmara Digital", number: "123456789", logo: logoBSI },
-    { id: 2, name: "Asmara Digital", number: "987654321", logo: logoMandiri },
-  ];
   return (
     <>
-      {accounts.map((account) => (
+      {dataGiftCard.map((account) => (
         <div
           key={account.id}
           className="shadow-md border shadow-slate-500 p-3 w-full h-40 flex flex-col justify-between"
@@ -38,7 +34,7 @@ export const GfitCard = () => {
               <p className={`${poppinsMedium.className}`}>{account.number}</p>
             </div>
             <div className="flex-[0.5] overflow-hidden pr-10">
-              <Image src={account.logo} alt="logo" width={0} height={0} />
+              <Image src={account.logo} alt="logo" width={100} height={100} />
             </div>
           </div>
           <div className="flex items-start">

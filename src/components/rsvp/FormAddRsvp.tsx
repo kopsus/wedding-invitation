@@ -1,6 +1,6 @@
 "use client";
 
-import { creteRsvp } from "../../api";
+import { creteRsvp } from "@/api";
 import React, { useState } from "react";
 
 interface FormAddRsvpProps {

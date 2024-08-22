@@ -1,11 +1,9 @@
-"use client";
-
 import Image from "next/image";
-import React, { useEffect, useState } from "react";
+import Link from "next/link";
 
 // assets
-import imgMerak from "../../../public/images/merak/merak-footer.png";
-import butterFly from "../../../public/images/butterfly/kupu_small.gif";
+import imgMerak from "@/../public/images/merak/merak-footer.png";
+import butterFly from "@/../public/images/butterfly/kupu_small.gif";
 import { IoMdBasketball } from "react-icons/io";
 import { FaInstagram, FaWhatsapp } from "react-icons/fa";
 
@@ -15,25 +13,12 @@ import {
   nightStillComes,
   poppinsSemiBold,
   southernaire,
-} from "../../utils/fonts";
-import { getFooter } from "../../api/index";
-import Link from "next/link";
+} from "@/utils/fonts";
 
-const Footer = () => {
-  const [data, setData] = useState([]);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const res = await getFooter();
-      setData(res);
-    };
-
-    fetchData();
-  }, []);
-
+const Footer = ({ dataFooter }) => {
   return (
     <div>
-      {data.map((value, index) => (
+      {dataFooter.map((value, index) => (
         <div key={index} className="h-96 relative ">
           <Image src={value.image} alt="" layout="fill" />
           <div className="absolute bg-gradient-to-t from-white h-1/6 bottom-0 w-full"></div>

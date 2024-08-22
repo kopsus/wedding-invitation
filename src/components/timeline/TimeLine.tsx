@@ -1,33 +1,22 @@
-"use client";
-
 import Image from "next/image";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { FaClock } from "react-icons/fa";
 import { IoLocationSharp } from "react-icons/io5";
-import centerFlores from "../../../public/images/flores/center.jpg";
-import bgCard from "../../../public/images/flores/left_side.png";
-import merakPutih from "../../../public/images/merak/Merak-Putih.png";
+import centerFlores from "@/../public/images/flores/center.jpg";
+import bgCard from "@/../public/images/flores/left_side.png";
+import merakPutih from "@/../public/images/merak/Merak-Putih.png";
 import {
   alice,
   poppinsLight,
   poppinsMedium,
   poppinsSemiBold,
   southernaire,
-} from "../../utils/fonts";
+} from "@/utils/fonts";
 import Link from "next/link";
-import { getProgram } from "../../api";
+import { getProgram } from "@/api";
 
-export const TimeLine = () => {
-  const [data, setData] = useState([]);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const res = await getProgram();
-      setData(res);
-    };
-
-    fetchData();
-  }, []);
+export const TimeLine = async () => {
+  const data = await getProgram();
 
   return (
     <div className="relative h-[1200px]">
@@ -93,7 +82,6 @@ export const TimeLine = () => {
           </div>
         ))}
       </div>
-      <div></div>
     </div>
   );
 };

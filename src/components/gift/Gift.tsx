@@ -1,26 +1,18 @@
-"use client";
-
 import React, { useState } from "react";
 import Image from "next/image";
 
 // font
-import {
-  alice,
-  poppinsMedium,
-  quicksand,
-  southernaire,
-  raleway,
-} from "../../utils/fonts";
+import { alice, poppinsMedium, quicksand, southernaire } from "@/utils/fonts";
 
 // assets
 import { FaGift } from "react-icons/fa";
-import Prince from "../../../public/images/Prince.png";
-import imageGallery1 from "../../../public/images/person/person1.jpg";
-import imageGallery2 from "../../../public/images/person/person2.jpg";
-import imageGallery3 from "../../../public/images/person/person3.jpg";
-import imageGallery4 from "../../../public/images/person/person5.jpg";
-import imageGallery5 from "../../../public/images/person/person6.jpg";
-import imageGallery6 from "../../../public/images/person/person7.jpg";
+import Prince from "@/../public/images/Prince.png";
+import imageGallery1 from "@/../public/images/person/person1.jpg";
+import imageGallery2 from "@/../public/images/person/person2.jpg";
+import imageGallery3 from "@/../public/images/person/person3.jpg";
+import imageGallery4 from "@/../public/images/person/person5.jpg";
+import imageGallery5 from "@/../public/images/person/person6.jpg";
+import imageGallery6 from "@/../public/images/person/person7.jpg";
 
 // swipper
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -31,7 +23,7 @@ import { Autoplay } from "swiper/modules";
 import { useQRCode } from "next-qrcode";
 import { GfitCard } from "./GfitCard";
 
-const Gift = ({ params }) => {
+const Gift = ({ params, dataGiftCard }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const { Canvas } = useQRCode();
@@ -71,7 +63,7 @@ const Gift = ({ params }) => {
           </div>
           {isOpen && (
             <>
-              <GfitCard />
+              <GfitCard dataGiftCard={dataGiftCard} />
               <div
                 className={`${!params && "w-52 h-52"} border-2 border-primary`}
               >

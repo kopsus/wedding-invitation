@@ -1,29 +1,16 @@
 "use client";
 
 import Image from "next/image";
-import React, { useEffect, useState } from "react";
-import { getgallery } from "../../api/index";
 import { motion } from "framer-motion";
 
 // font
-import { alice, southernaire } from "../../utils/fonts";
-import { fadeInUp } from "../../utils/animation";
+import { alice, southernaire } from "@/utils/fonts";
+import { fadeInUp } from "@/utils/animation";
 import { NextLightbox } from "../lightbox/Lightbox";
 import { useLightbox } from "../lightbox/useLightbox";
 
-const Gallery = () => {
-  const [data, setData] = useState([]);
-
+const Gallery = ({ dataGallery }) => {
   const lightbox = useLightbox();
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const res = await getgallery();
-      setData(res);
-    };
-
-    fetchData();
-  }, []);
 
   const zoomIn = {
     hidden: {
@@ -59,7 +46,7 @@ const Gallery = () => {
           will.&quot;
         </motion.p>
         <motion.div className="grid grid-cols-2 gap-3 px-5 mt-9">
-          {data.map((value, index) => (
+          {dataGallery.map((value, index) => (
             <motion.div
               key={index}
               variants={fadeInUp}
@@ -70,7 +57,7 @@ const Gallery = () => {
               onClick={() =>
                 lightbox.open(
                   index,
-                  data?.map((d) => d?.image)
+                  dataGallery?.map((d) => d?.image)
                 )
               }
               className="relative overflow-hidden border-2 border-primary rounded-md sm:h-96 h-52 cursor-pointer group"

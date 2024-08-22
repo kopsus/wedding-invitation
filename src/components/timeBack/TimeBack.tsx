@@ -1,8 +1,6 @@
-"use client";
-
 import Image from "next/image";
 import React, { useState, useEffect } from "react";
-import { alice, euphorig, readex_pro } from "../../utils/fonts";
+import { alice, euphorig, readex_pro } from "@/utils/fonts";
 
 const TimeBack = ({ dataMempelai }) => {
   const [countdown, setCountdown] = useState({
