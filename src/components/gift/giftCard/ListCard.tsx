@@ -7,9 +7,7 @@ import { poppinsMedium, raleway } from "@/utils/fonts";
 import Image from "next/image";
 import { IoMdCopy } from "react-icons/io";
 
-export const GfitCard = ({ dataGiftCard }) => {
-  console.log("data gift card", dataGiftCard);
-
+export const ListCard = ({ dataGiftCard }) => {
   const [copiedId, setCopiedId] = useState(null);
 
   const handleCopyNumber = (id, number) => {

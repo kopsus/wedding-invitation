@@ -10,12 +10,12 @@ import "swiper/css";
 
 // qrcode
 import { useQRCode } from "next-qrcode";
-import { GfitCard } from "./GfitCard";
+import { ListCard } from "./ListCard";
+import { useSearchParams } from "next/navigation";
 
-const Gift = ({ params, dataGiftCard }) => {
+const GiftCard = ({ dataGiftCard }) => {
   const [isOpen, setIsOpen] = useState(false);
-
-  const { Canvas } = useQRCode();
+  const searchParams = useSearchParams();
 
   return (
     <div
@@ -50,30 +50,11 @@ const Gift = ({ params, dataGiftCard }) => {
               Wedding Gift
             </p>
           </div>
-          {isOpen && (
-            <>
-              <GfitCard dataGiftCard={dataGiftCard} />
-              <div
-                className={`${!params && "w-52 h-52"} border-2 border-primary`}
-              >
-                {params && (
-                  <Canvas
-                    text={decodeURIComponent(params.slug)}
-                    options={{
-                      errorCorrectionLevel: "M",
-                      margin: 3,
-                      scale: 4,
-                      width: 200,
-                    }}
-                  />
-                )}
-              </div>
-            </>
-          )}
+          {isOpen && <ListCard dataGiftCard={dataGiftCard} />}
         </div>
       </div>
     </div>
   );
 };
 
-export default Gift;
+export default GiftCard;

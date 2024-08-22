@@ -14,12 +14,13 @@ import Audio from "../audio/Audio";
 import Gallery from "../gallery/Gallery";
 import Story from "../story/Story";
 import PlatformOnline from "../platformOnline/PlatformOnline";
-import Gift from "../gift/Gift";
+import GiftCard from "../gift/giftCard/GiftCard";
 import Youtube from "../youtube/Youtube";
 import Footer from "../footer/Footer";
 import { useSearchParams } from "next/navigation";
 import Rsvp from "../rsvp/Rsvp";
 import Carousel from "../carousel/Carousel";
+import GiftQrCode from "../gift/giftQrCode/GiftQrCode";
 
 const Banner1 = ({
   dataMempelai,
@@ -190,7 +191,8 @@ const Banner1 = ({
           <Story dataLove={dataLove} dataStory={dataStory} />
           <PlatformOnline />
           <Rsvp />
-          <Gift params={params} dataGiftCard={dataGiftCard} />
+          <GiftCard dataGiftCard={dataGiftCard} />
+          <GiftQrCode guestName={guestName} />
           <Carousel dataGallery={dataGallery} />
           <Youtube dataYtLink={dataYtLink} />
           <Footer dataFooter={dataFooter} />
