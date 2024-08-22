@@ -17,6 +17,7 @@ import PlatformOnline from "../platformOnline/PlatformOnline";
 import Gift from "../gift/Gift";
 import Youtube from "../youtube/Youtube";
 import Footer from "../footer/Footer";
+import { useSearchParams } from "next/navigation";
 
 const Banner1 = ({
   dataMempelai,
@@ -35,9 +36,10 @@ const Banner1 = ({
   const [showContent, setShowContent] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const slug = params?.slug ? decodeURIComponent(params.slug) : "Nama Tamu";
   const contentRef = useRef(null);
   const audioRef = useRef(null);
+  const searchParams = useSearchParams();
+  const guestName = searchParams.get("to") || "Nama Tamu";
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -139,7 +141,7 @@ const Banner1 = ({
             transition={{ duration: 1 }}
             className={`${tms.className} text-primary text-[26px] font-semibold`}
           >
-            {slug}
+            {guestName}
           </motion.p>
           {showButton && (
             <motion.div

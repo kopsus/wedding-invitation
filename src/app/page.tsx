@@ -10,7 +10,7 @@ import {
   getMempelai,
   getStory,
   getYoutubeLink,
-} from "../api/index";
+} from "@/api/index";
 
 export default async function Home({ params }) {
   const dataCover = await getCover();
