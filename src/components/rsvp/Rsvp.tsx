@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState, useRef } from "react";
-import { getLove, getRsvp } from "@/api";
+import { getRsvp } from "@/api";
 
 // font
 import { alice, georgia, hathemBosteem, poppinsLight } from "@/utils/fonts";
@@ -13,7 +13,6 @@ import { CommentItem } from "./CommentItem";
 
 const Rsvp = () => {
   const formRef = useRef(null);
-  const [dataLove, setDataLove] = useState([]);
   const [dataKehadiran, setDataKehadiran] = useState([]);
 
   const fetchRsvpData = async () => {
@@ -26,18 +25,12 @@ const Rsvp = () => {
     }
   };
 
-  const fetcLoveData = async () => {
-    const data = await getLove();
-    setDataLove(data);
-  };
-
   const onClickReply = (id) => {
     formRef.current?.selectForReply?.(id);
   };
 
   useEffect(() => {
     fetchRsvpData();
-    fetcLoveData();
   }, []);
 
   const countKehadiran = (status) =>

@@ -18,6 +18,8 @@ import Gift from "../gift/Gift";
 import Youtube from "../youtube/Youtube";
 import Footer from "../footer/Footer";
 import { useSearchParams } from "next/navigation";
+import Rsvp from "../rsvp/Rsvp";
+import Carousel from "../carousel/Carousel";
 
 const Banner1 = ({
   dataMempelai,
@@ -187,7 +189,9 @@ const Banner1 = ({
           <Gallery dataGallery={dataGallery} />
           <Story dataLove={dataLove} dataStory={dataStory} />
           <PlatformOnline />
+          <Rsvp />
           <Gift params={params} dataGiftCard={dataGiftCard} />
+          <Carousel dataGallery={dataGallery} />
           <Youtube dataYtLink={dataYtLink} />
           <Footer dataFooter={dataFooter} />
         </div>

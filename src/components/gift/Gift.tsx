@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Image from "next/image";
 
 // font
 import { alice, poppinsMedium, quicksand, southernaire } from "@/utils/fonts";
@@ -7,17 +6,7 @@ import { alice, poppinsMedium, quicksand, southernaire } from "@/utils/fonts";
 // assets
 import { FaGift } from "react-icons/fa";
 import Prince from "@/../public/images/Prince.png";
-import imageGallery1 from "@/../public/images/person/person1.jpg";
-import imageGallery2 from "@/../public/images/person/person2.jpg";
-import imageGallery3 from "@/../public/images/person/person3.jpg";
-import imageGallery4 from "@/../public/images/person/person5.jpg";
-import imageGallery5 from "@/../public/images/person/person6.jpg";
-import imageGallery6 from "@/../public/images/person/person7.jpg";
-
-// swipper
-import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import { Autoplay } from "swiper/modules";
 
 // qrcode
 import { useQRCode } from "next-qrcode";
@@ -83,48 +72,6 @@ const Gift = ({ params, dataGiftCard }) => {
           )}
         </div>
       </div>
-      <Swiper
-        className="mySwiper mt-10"
-        slidesPerView={4}
-        spaceBetween={5}
-        autoplay={{
-          delay: 2500,
-          disableOnInteraction: false,
-        }}
-        loop={true}
-        modules={[Autoplay]}
-      >
-        <SwiperSlide>
-          <div className="h-28 overflow-hidden border-2 border-white rounded-md">
-            <Image src={imageGallery1} alt="" width={0} height={0} />
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="h-28 overflow-hidden border-2 border-white rounded-md">
-            <Image src={imageGallery2} alt="" width={0} height={0} />
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="h-28 overflow-hidden border-2 border-white rounded-md">
-            <Image src={imageGallery3} alt="" width={0} height={0} />
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="h-28 overflow-hidden border-2 border-white rounded-md">
-            <Image src={imageGallery4} alt="" width={0} height={0} />
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="h-28 overflow-hidden border-2 border-white rounded-md">
-            <Image src={imageGallery5} alt="" width={0} height={0} />
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="h-28 overflow-hidden border-2 border-white rounded-md">
-            <Image src={imageGallery6} alt="" width={0} height={0} />
-          </div>
-        </SwiperSlide>
-      </Swiper>
     </div>
   );
 };

@@ -18,7 +18,10 @@
   "cover": [
     {
       "id": "1",
-      "image": ["/images/person/person1.jpg", "/images/person/person2.jpg"]
+      "image": [
+        "/images/person/person1.jpg",
+        "/images/person/person2.jpg"
+      ]
     }
   ],
   "banner2": [
@@ -163,6 +166,13 @@
       "ucapan": "asa",
       "konfirmasi_kehadiran": "Hadir",
       "waktu_submit": "2024-08-21T14:21:48.735Z"
+    },
+    {
+      "id": "1c57",
+      "nama": "tes",
+      "ucapan": "asd",
+      "konfirmasi_kehadiran": "Tidak Hadir",
+      "waktu_submit": "2024-08-22T14:41:57.176Z"
     }
   ],
   "youtubeLink": [
