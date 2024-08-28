@@ -21,6 +21,7 @@ import { useSearchParams } from "next/navigation";
 import Rsvp from "../rsvp/Rsvp";
 import Carousel from "../carousel/Carousel";
 import GiftQrCode from "../gift/giftQrCode/GiftQrCode";
+import { TimeLine } from "../timeline/TimeLine";
 
 const Banner1 = ({
   dataMempelai,
@@ -33,6 +34,7 @@ const Banner1 = ({
   dataLove,
   dataYtLink,
   dataFooter,
+  dataProgram,
   params,
 }) => {
   const [showButton, setShowButton] = useState(true);
@@ -187,6 +189,7 @@ const Banner1 = ({
             toggleAudio={toggleAudio}
             setIsPlaying={setIsPlaying}
           />
+          <TimeLine dataProgram={dataProgram} />
           <Gallery dataGallery={dataGallery} />
           <Story dataLove={dataLove} dataStory={dataStory} />
           <PlatformOnline />

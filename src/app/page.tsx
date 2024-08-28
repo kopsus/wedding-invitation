@@ -8,6 +8,7 @@ import {
   getGiftCard,
   getLove,
   getMempelai,
+  getProgram,
   getStory,
   getYoutubeLink,
 } from "@/api/index";
@@ -23,6 +24,7 @@ export default async function Home({ params }) {
   const dataLove = await getLove();
   const dataYtLink = await getYoutubeLink();
   const dataFooter = await getFooter();
+  const dataProgram = await getProgram();
 
   return (
     <>
@@ -37,6 +39,7 @@ export default async function Home({ params }) {
         dataLove={dataLove}
         dataYtLink={dataYtLink}
         dataFooter={dataFooter}
+        dataProgram={dataProgram}
         params={params}
       />
     </>

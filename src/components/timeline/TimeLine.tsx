@@ -13,11 +13,9 @@ import {
   southernaire,
 } from "@/utils/fonts";
 import Link from "next/link";
-import { getProgram } from "@/api";
+import { typeProgram } from "@/api/types";
 
-export const TimeLine = async () => {
-  const data = await getProgram();
-
+export const TimeLine = ({ dataProgram }: { dataProgram: typeProgram[] }) => {
   return (
     <div className="relative h-[1200px]">
       <div className="absolute top-0 w-full h-full">
@@ -27,7 +25,7 @@ export const TimeLine = async () => {
         <div className="w-36 mx-auto my-10">
           <Image src={merakPutih} alt="" width={0} height={0} />
         </div>
-        {data.map((value, index) => (
+        {dataProgram.map((value, index) => (
           <div
             key={index}
             className="relative h-[450px] shadow-md shadow-black mb-16"
