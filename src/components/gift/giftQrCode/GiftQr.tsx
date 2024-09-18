@@ -10,9 +10,11 @@ import "swiper/css";
 
 // qrcode
 import { useQRCode } from "next-qrcode";
+import ModalQr from "./ModalQrCode";
 
-const GiftQrCode = ({ guestName }) => {
-  const [isOpen, setIsOpen] = useState(false);
+const GiftQrCode = ({ guestName, dataMempelai }) => {
+  const [openModal, setOpenModal] = useState(false);
+  // console.log("Data mempelai", dataMempelai);
 
   const { Canvas } = useQRCode();
 
@@ -42,33 +44,19 @@ const GiftQrCode = ({ guestName }) => {
           </p>
           <div
             className="flex items-center gap-2 text-white bg-primary rounded-md px-5 py-2 cursor-pointer"
-            onClick={() => setIsOpen(!isOpen)}
+            onClick={() => setOpenModal(!openModal)}
           >
             <FaGift />
             <p className={`${quicksand.className} text-[15px] font-medium`}>
               Wedding Gift
             </p>
           </div>
-          {isOpen && (
-            <>
-              <div
-                className={`${
-                  !guestName && "w-52 h-52"
-                } border-2 border-primary`}
-              >
-                {guestName && (
-                  <Canvas
-                    text={guestName}
-                    options={{
-                      errorCorrectionLevel: "M",
-                      margin: 3,
-                      scale: 4,
-                      width: 200,
-                    }}
-                  />
-                )}
-              </div>
-            </>
+          {openModal && (
+            <ModalQr
+              closeModal={() => setOpenModal(false)}
+              guestName={guestName}
+              dataMempelai={dataMempelai}
+            />
           )}
         </div>
       </div>

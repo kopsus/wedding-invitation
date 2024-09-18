@@ -12,6 +12,7 @@
     "axios": "^1.7.4",
     "date-fns": "^3.6.0",
     "framer-motion": "^11.3.28",
+    "html-to-image": "^1.11.11",
     "intl": "^1.2.5",
     "json-server": "^1.0.0-beta.1",
     "next": "14.2.5",

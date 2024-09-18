@@ -20,7 +20,7 @@ import Footer from "../footer/Footer";
 import { useSearchParams } from "next/navigation";
 import Rsvp from "../rsvp/Rsvp";
 import Carousel from "../carousel/Carousel";
-import GiftQrCode from "../gift/giftQrCode/GiftQrCode";
+import GiftQrCode from "../gift/giftQrCode/GiftQr";
 import { TimeLine } from "../timeline/TimeLine";
 
 const Banner1 = ({
@@ -195,7 +195,7 @@ const Banner1 = ({
           <PlatformOnline />
           <Rsvp />
           <GiftCard dataGiftCard={dataGiftCard} />
-          <GiftQrCode guestName={guestName} />
+          <GiftQrCode guestName={guestName} dataMempelai={dataMempelai} />
           <Carousel dataGallery={dataGallery} />
           <Youtube dataYtLink={dataYtLink} />
           <Footer dataFooter={dataFooter} />

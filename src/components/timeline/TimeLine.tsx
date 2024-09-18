@@ -25,7 +25,7 @@ export const TimeLine = ({ dataProgram }: { dataProgram: typeProgram[] }) => {
         <div className="w-36 mx-auto my-10">
           <Image src={merakPutih} alt="" width={0} height={0} />
         </div>
-        {dataProgram.map((value, index) => (
+        {dataProgram?.map((value, index) => (
           <div
             key={index}
             className="relative h-[450px] shadow-md shadow-black mb-16"

@@ -12,3 +12,14 @@ export const formatDate = (dateString: string): string => {
   const date = new Date(dateString);
   return date.toLocaleDateString("id-ID", options);
 };
+
+export function formatDateTimeline(dateString: string | number | Date): string {
+  const options: Intl.DateTimeFormatOptions = {
+    weekday: "long",
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  };
+  const date = new Date(dateString);
+  return date.toLocaleDateString("en-GB", options);
+}
